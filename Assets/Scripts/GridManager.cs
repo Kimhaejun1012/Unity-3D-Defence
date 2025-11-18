@@ -44,10 +44,9 @@ public class GridManager : MonoBehaviour
 
                 mapData.SetCell(x, y, type);
 
-                Debug.Log($"{x}, {y} -> {type}");
+                //Debug.Log($"{x}, {y} -> {type}");
             }
         }
-
-        Debug.Log($"Bake Good: {width} x {height}");
+        //Debug.Log($"Bake Good: {width} x {height}");
     }
 }

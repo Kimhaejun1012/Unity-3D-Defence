@@ -11,7 +11,7 @@ public class ObjectPoolManager : MonoBehaviour
     {
         public string key;
         public GameObject prefab;
-        public int initialSize = 30;
+        public int initialSize = 10;
     }
 
     public List<PoolInfo> poolInfos = new List<PoolInfo>();

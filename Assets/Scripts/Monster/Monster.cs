@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Monster : MonoBehaviour, IDamageable
 {
     public MonsterData monsterData;
 
@@ -46,5 +46,10 @@ public class Monster : MonoBehaviour
                 GetComponent<PooledObject>().Die();
             }
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        
     }
 }

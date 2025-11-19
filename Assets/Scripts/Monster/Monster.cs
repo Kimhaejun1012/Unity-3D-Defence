@@ -11,7 +11,11 @@ public class Monster : MonoBehaviour
 
     void OnEnable()
     {
-        waypoints = WayPointManager.Instance.waypoints;
+
+    }
+    public void Init(Transform[] waypoints)
+    {
+        this.waypoints = waypoints;
         transform.position = waypoints[0].position;
         waypointIndex = 0;
     }
@@ -39,6 +43,7 @@ public class Monster : MonoBehaviour
             if (waypointIndex >= waypoints.Length)
             {
                 gameObject.SetActive(false);
+                GetComponent<PooledObject>().Die();
             }
         }
     }

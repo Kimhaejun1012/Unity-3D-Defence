@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
+    public string monsterKey = "TestMonster";
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ObjectPoolManager.Instance.Spawn("TestMonster", WayPointManager.Instance.waypoints[0].position, Quaternion.identity);
+            var obj = ObjectPoolManager.Instance.Spawn(monsterKey, Vector3.zero, Quaternion.identity);
+            var monster = obj.GetComponent<Monster>();
+
+            monster.Init(WayPointManager.Instance.waypoints);
         }
     }
 }

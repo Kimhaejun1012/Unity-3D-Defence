@@ -44,8 +44,8 @@ public class ObjectPoolManager : MonoBehaviour
             for (int i = 0; i < info.initialSize; i++)
             {
                 GameObject obj = CreateNewObject(info.key);
-                obj.SetActive(false);
                 pools[info.key].Enqueue(obj);
+                obj.SetActive(false);
             }
         }
     }

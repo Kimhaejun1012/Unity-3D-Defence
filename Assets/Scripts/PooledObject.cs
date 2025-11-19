@@ -4,7 +4,12 @@ public class PooledObject : MonoBehaviour
 {
     public string poolKey;
 
-    private void OnDisable()
+    //private void OnDisable()
+    //{
+    //    if (ObjectPoolManager.Instance != null)
+    //        ObjectPoolManager.Instance.Return(poolKey, gameObject);
+    //}
+    public void Die()
     {
         if (ObjectPoolManager.Instance != null)
             ObjectPoolManager.Instance.Return(poolKey, gameObject);

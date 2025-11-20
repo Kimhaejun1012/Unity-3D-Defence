@@ -24,7 +24,6 @@ public class CharacterBase : MonoBehaviour
         {
             attackTimer = 0f;
             Attack();
-            Debug.Log("Attack!");
         }
     }
 

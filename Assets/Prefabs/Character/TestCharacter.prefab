@@ -3906,6 +3906,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3792148494110423191}
   - component: {fileID: 6095803376157818992}
+  - component: {fileID: 5265823485893831647}
+  - component: {fileID: 6637946082758842408}
   m_Layer: 0
   m_Name: TestCharacter
   m_TagString: Untagged
@@ -4054,6 +4056,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5265823485893831647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260714499880022373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc20df21cc984f4fb6d7e2f20417e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  attackSpeed: 2
+--- !u!114 &6637946082758842408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260714499880022373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fdfaa10e495b240911d8f90923c5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileKey: TestProjectile
+  firePoint: {fileID: 3792148494110423191}
+  projectileSpeed: 10
 --- !u!1 &2430925618730547438
 GameObject:
   m_ObjectHideFlags: 0

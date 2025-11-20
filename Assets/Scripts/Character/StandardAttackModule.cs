@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public class StandardAttackModule : MonoBehaviour, IAttackModule
 {
-    public float damage = 5f;
+    public int damage = 5;
 
     public void Execute(Monster target)
     {
-        target.TakeDamage(damage);
+        target.GetComponent<IDamageable>().TakeDamage(damage);
     }
 }

@@ -4540,53 +4540,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 772356538}
-    - targetCorrespondingSourceObject: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 772356539}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
---- !u!1 &772356536 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
-  m_PrefabInstance: {fileID: 772356535}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &772356537 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3792148494110423191, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
-  m_PrefabInstance: {fileID: 772356535}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &772356538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772356536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc20df21cc984f4fb6d7e2f20417e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
-  attackSpeed: 2
---- !u!114 &772356539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772356536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1fdfaa10e495b240911d8f90923c5c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileKey: TestProjectile
-  firePoint: {fileID: 772356537}
-  projectileSpeed: 10
 --- !u!1001 &785602362
 PrefabInstance:
   m_ObjectHideFlags: 0

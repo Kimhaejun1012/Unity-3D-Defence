@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
         {
-            target.TakeDamage(10);
+            target.GetComponent<IDamageable>().TakeDamage(5);
             ObjectPoolManager.Instance.Return(poolKey, gameObject);
         }
     }

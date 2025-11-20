@@ -9,7 +9,7 @@ public class PooledObject : MonoBehaviour
     //    if (ObjectPoolManager.Instance != null)
     //        ObjectPoolManager.Instance.Return(poolKey, gameObject);
     //}
-    public void Die()
+    public void Return()
     {
         if (ObjectPoolManager.Instance != null)
             ObjectPoolManager.Instance.Return(poolKey, gameObject);

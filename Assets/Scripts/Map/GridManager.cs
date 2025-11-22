@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 public class GridManager : MonoBehaviour
 {
     public Tilemap tilemap;
@@ -23,6 +22,9 @@ public class GridManager : MonoBehaviour
         BoundsInt bounds = tilemap.cellBounds;
         int width = bounds.size.x;
         int height = bounds.size.y;
+
+        mapData.originX = bounds.xMin;
+        mapData.originY = bounds.yMin;
 
         mapData.width = width;
         mapData.height = height;

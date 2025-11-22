@@ -15,6 +15,8 @@ public class MapData : ScriptableObject
 {
     public int width;
     public int height;
+    public int originX;
+    public int originY;
 
     public CellType[] cells;
 
@@ -27,4 +29,15 @@ public class MapData : ScriptableObject
     {
         return cells[y * width + x];
     }
+    public CellType GetCellByTilemapCoord(int tilemapX, int tilemapY)
+    {
+        int localX = tilemapX - originX;
+        int localY = tilemapY - originY;
+
+        if (localX < 0 || localY < 0 || localX >= width || localY >= height)
+            return CellType.Empty;
+
+        return cells[localY * width + localX];
+    }
+
 }

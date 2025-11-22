@@ -3908,7 +3908,8 @@ GameObject:
   - component: {fileID: 6095803376157818992}
   - component: {fileID: 5265823485893831647}
   - component: {fileID: 6637946082758842408}
-  m_Layer: 0
+  - component: {fileID: 1883615421670369908}
+  m_Layer: 8
   m_Name: TestCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3924,9 +3925,9 @@ Transform:
   m_GameObject: {fileID: 2260714499880022373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7474330728190096565}
   - {fileID: 4588699596554991012}
@@ -4085,6 +4086,29 @@ MonoBehaviour:
   projectileKey: TestProjectile
   firePoint: {fileID: 3792148494110423191}
   projectileSpeed: 10
+--- !u!136 &1883615421670369908
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260714499880022373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &2430925618730547438
 GameObject:
   m_ObjectHideFlags: 0

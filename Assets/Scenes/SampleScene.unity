@@ -9179,8 +9179,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tilemap: {fileID: 455136889}
-  mapData: {fileID: 11400000, guid: 9ecd88a2bc207534ab4b392a4cc08a96, type: 2}
   grid: {fileID: 862060346}
+  towerPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
+  towerPreviewPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
+  originalMapData: {fileID: 11400000, guid: 9ecd88a2bc207534ab4b392a4cc08a96, type: 2}
 --- !u!1001 &1529255687
 PrefabInstance:
   m_ObjectHideFlags: 0

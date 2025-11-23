@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterBase : MonoBehaviour
+public class TowerBase : MonoBehaviour
 {
     [Header("Tower Stats")]
     public float range = 5f;

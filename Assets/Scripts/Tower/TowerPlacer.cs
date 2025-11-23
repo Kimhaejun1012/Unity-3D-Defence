@@ -9,10 +9,18 @@ public class TowerPlacer : MonoBehaviour
     public Tilemap tilemap;
 
     public Grid grid;
+
     public GameObject towerPrefab;
     public GameObject towerPreviewPrefab;
+
+    public GameObject towerPrefab2;
+    public GameObject towerPreviewPrefab2;
+
     private GameObject previewInstance;
     private bool isPlacing = false;
+
+    private GameObject currentTowerPrefab;
+    private GameObject currentPreviewPrefab;
 
     public MapData originalMapData;
     private MapData mapData;
@@ -28,7 +36,12 @@ public class TowerPlacer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            StartPlacing();
+            StartPlacing(towerPrefab, towerPreviewPrefab);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            StartPlacing(towerPrefab2, towerPreviewPrefab2);
         }
 
         if (isPlacing)
@@ -69,12 +82,17 @@ public class TowerPlacer : MonoBehaviour
             }
         }
     }
-    void StartPlacing()
+    void StartPlacing(GameObject tower, GameObject preview)
     {
+        // 기존 프리뷰 제거
         if (previewInstance != null)
             Destroy(previewInstance);
 
-        previewInstance = Instantiate(towerPreviewPrefab);
+        currentTowerPrefab = tower;
+        currentPreviewPrefab = preview;
+
+        // 신규 프리뷰 생성
+        previewInstance = Instantiate(currentPreviewPrefab);
         previewInstance.SetActive(true);
 
         SetPreviewColor(Color.red);
@@ -93,7 +111,7 @@ public class TowerPlacer : MonoBehaviour
     }
     void PlaceTower(Vector3 pos, Vector3Int cellPos)
     {
-        Instantiate(towerPrefab, pos, Quaternion.identity);
+        Instantiate(currentTowerPrefab, pos, Quaternion.identity);
 
         mapData.SetCell(cellPos.x - mapData.originX, cellPos.y - mapData.originY, CellType.Blocked);
 

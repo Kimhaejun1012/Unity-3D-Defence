@@ -1635,8 +1635,11 @@ MonoBehaviour:
   - key: TestMonster
     prefab: {fileID: 245857654887785465, guid: 98ed9e62ce796b24d8ef02853bb31b11, type: 3}
     initialSize: 10
-  - key: TestProjectile
+  - key: StandardProjectile
     prefab: {fileID: 3969055521979703354, guid: beee8b2d94015514e8234d34d95700ab, type: 3}
+    initialSize: 10
+  - key: SlowProjectile
+    prefab: {fileID: 3969055521979703354, guid: 3809de37b9d411a4ba7fde75923d44e5, type: 3}
     initialSize: 10
 --- !u!4 &270894445
 Transform:
@@ -9181,7 +9184,9 @@ MonoBehaviour:
   tilemap: {fileID: 455136889}
   grid: {fileID: 862060346}
   towerPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
-  towerPreviewPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
+  towerPreviewPrefab: {fileID: 2260714499880022373, guid: 9d2a082ef7dc0894ca8d262396b5c856, type: 3}
+  towerPrefab2: {fileID: 8456026636906933522, guid: cff1509ede8e1dc4a8b19bc00f455af5, type: 3}
+  towerPreviewPrefab2: {fileID: 8456026636906933522, guid: 025492810628e6b4c869eded92dcdf9d, type: 3}
   originalMapData: {fileID: 11400000, guid: 9ecd88a2bc207534ab4b392a4cc08a96, type: 2}
 --- !u!1001 &1529255687
 PrefabInstance:

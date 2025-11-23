@@ -7,7 +7,11 @@ public class MonsterMovement : MonoBehaviour
     private float speed;
     private int index;
     private Transform[] waypoints;
-
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
     public void Init(float moveSpeed, Transform[] transforms)
     {
         speed = moveSpeed;

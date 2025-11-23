@@ -5,19 +5,24 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public MonsterData data;
-
-    private MonsterMovement movement;
+    public MonsterMovement Movement { get; private set; }
     private MonsterHealth health;
 
+    private StatusEffectController effectController;
     void Awake()
     {
-        movement = GetComponent<MonsterMovement>();
+        Movement = GetComponent<MonsterMovement>();
         health = GetComponent<MonsterHealth>();
+        effectController = GetComponent<StatusEffectController>();
     }
-
     public void Init(Transform[] transforms)
     {
         health.Init(data.maxHP);
-        movement.Init(data.moveSpeed, transforms);
+        Movement.Init(data.moveSpeed, transforms);
+    }
+
+    public void ApplySlow(float percent, float duration)
+    {
+        effectController.AddEffect(new SlowEffect(this, percent, duration));
     }
 }

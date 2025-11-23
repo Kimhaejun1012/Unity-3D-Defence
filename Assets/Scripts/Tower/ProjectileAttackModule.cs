@@ -19,7 +19,7 @@ public class ProjectileAttackModule : MonoBehaviour, IAttackModule
             firePoint.rotation
         );
 
-        Projectile p = proj.GetComponent<Projectile>();
+        ProjectileBase p = proj.GetComponent<ProjectileBase>();
         p.Init(target, projectileSpeed);
     }
 }

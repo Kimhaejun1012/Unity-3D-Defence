@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    public string monsterKey = "TestMonster";
+    public string monsterKey;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

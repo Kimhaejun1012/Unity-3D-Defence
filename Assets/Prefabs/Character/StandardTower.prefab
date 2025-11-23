@@ -3910,7 +3910,7 @@ GameObject:
   - component: {fileID: 6637946082758842408}
   - component: {fileID: 1883615421670369908}
   m_Layer: 8
-  m_Name: TestCharacter
+  m_Name: StandardTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4083,7 +4083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fdfaa10e495b240911d8f90923c5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileKey: TestProjectile
+  projectileKey: StandardProjectile
   firePoint: {fileID: 3792148494110423191}
   projectileSpeed: 10
 --- !u!136 &1883615421670369908

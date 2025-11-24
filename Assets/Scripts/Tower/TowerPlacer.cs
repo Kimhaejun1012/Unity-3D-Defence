@@ -84,14 +84,12 @@ public class TowerPlacer : MonoBehaviour
     }
     void StartPlacing(GameObject tower, GameObject preview)
     {
-        // 기존 프리뷰 제거
         if (previewInstance != null)
             Destroy(previewInstance);
 
         currentTowerPrefab = tower;
         currentPreviewPrefab = preview;
 
-        // 신규 프리뷰 생성
         previewInstance = Instantiate(currentPreviewPrefab);
         previewInstance.SetActive(true);
 
@@ -131,5 +129,12 @@ public class TowerPlacer : MonoBehaviour
         }
         isPlacing = false;
     }
-
+    public void SelectTowerA()
+    {
+        // [TODO] 임시 타워 선택 버튼
+        StartPlacing(
+            towerPrefab,
+            towerPreviewPrefab
+        );
+    }
 }

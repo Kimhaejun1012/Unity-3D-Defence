@@ -7,14 +7,21 @@ public class TowerPlacer : MonoBehaviour
 {
     public Camera cam;
     public Tilemap tilemap;
-
     public Grid grid;
 
-    public GameObject towerPrefab;
-    public GameObject towerPreviewPrefab;
+    public MapData originalMapData;
+    private MapData mapData;
+    [System.Serializable]
+    public class TowerInfo
+    {
+        public GameObject towerPrefab;
+        public GameObject previewPrefab;
+    }
 
-    public GameObject towerPrefab2;
-    public GameObject towerPreviewPrefab2;
+    public Dictionary<string, TowerInfo> towerDict = new Dictionary<string, TowerInfo>();
+
+    public List<string> towerKeys;
+    public List<TowerInfo> towerValues;
 
     private GameObject previewInstance;
     private bool isPlacing = false;
@@ -22,28 +29,22 @@ public class TowerPlacer : MonoBehaviour
     private GameObject currentTowerPrefab;
     private GameObject currentPreviewPrefab;
 
-    public MapData originalMapData;
-    private MapData mapData;
 
     void Awake()
     {
         mapData = Instantiate(originalMapData);
+
         if (grid == null && tilemap != null)
             grid = tilemap.layoutGrid;
+
+        for (int i = 0; i < towerKeys.Count; i++)
+        {
+            towerDict[towerKeys[i]] = towerValues[i];
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            StartPlacing(towerPrefab, towerPreviewPrefab);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            StartPlacing(towerPrefab2, towerPreviewPrefab2);
-        }
-
         if (isPlacing)
         {
             UpdatePreview();
@@ -82,6 +83,18 @@ public class TowerPlacer : MonoBehaviour
             }
         }
     }
+    public void SelectTower(string key)
+    {
+        if (!towerDict.ContainsKey(key))
+        {
+            Debug.Log($"Tower Key '{key}' X ");
+            return;
+        }
+
+        TowerInfo info = towerDict[key];
+        StartPlacing(info.towerPrefab, info.previewPrefab);
+    }
+
     void StartPlacing(GameObject tower, GameObject preview)
     {
         if (previewInstance != null)
@@ -128,13 +141,5 @@ public class TowerPlacer : MonoBehaviour
             previewInstance = null;
         }
         isPlacing = false;
-    }
-    public void SelectTowerA()
-    {
-        // [TODO] 임시 타워 선택 버튼
-        StartPlacing(
-            towerPrefab,
-            towerPreviewPrefab
-        );
     }
 }

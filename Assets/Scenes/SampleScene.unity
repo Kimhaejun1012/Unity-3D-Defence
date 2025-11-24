@@ -1020,14 +1020,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1516349617}
         m_TargetAssemblyTypeName: TowerPlacer, Assembly-CSharp
-        m_MethodName: SelectTowerA
-        m_Mode: 1
+        m_MethodName: SelectTower
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Standard
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &107418200
@@ -2313,7 +2313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 377757427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1516349617}
+        m_TargetAssemblyTypeName: TowerPlacer, Assembly-CSharp
+        m_MethodName: SelectTower
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slow
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &377757427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9512,11 +9524,15 @@ MonoBehaviour:
   cam: {fileID: 963194227}
   tilemap: {fileID: 455136889}
   grid: {fileID: 862060346}
-  towerPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
-  towerPreviewPrefab: {fileID: 2260714499880022373, guid: 9d2a082ef7dc0894ca8d262396b5c856, type: 3}
-  towerPrefab2: {fileID: 8456026636906933522, guid: cff1509ede8e1dc4a8b19bc00f455af5, type: 3}
-  towerPreviewPrefab2: {fileID: 8456026636906933522, guid: 025492810628e6b4c869eded92dcdf9d, type: 3}
   originalMapData: {fileID: 11400000, guid: 9ecd88a2bc207534ab4b392a4cc08a96, type: 2}
+  towerKeys:
+  - Standard
+  - Slow
+  towerValues:
+  - towerPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
+    previewPrefab: {fileID: 2260714499880022373, guid: 9d2a082ef7dc0894ca8d262396b5c856, type: 3}
+  - towerPrefab: {fileID: 8456026636906933522, guid: cff1509ede8e1dc4a8b19bc00f455af5, type: 3}
+    previewPrefab: {fileID: 8456026636906933522, guid: 025492810628e6b4c869eded92dcdf9d, type: 3}
 --- !u!1001 &1529255687
 PrefabInstance:
   m_ObjectHideFlags: 0

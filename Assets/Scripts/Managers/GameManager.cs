@@ -12,4 +12,9 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
     }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over~!");
+    }
 }

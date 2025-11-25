@@ -16,6 +16,7 @@ public class TowerPlacer : MonoBehaviour
     {
         public GameObject towerPrefab;
         public GameObject previewPrefab;
+        public int price;
     }
 
     public Dictionary<string, TowerInfo> towerDict = new Dictionary<string, TowerInfo>();
@@ -28,7 +29,7 @@ public class TowerPlacer : MonoBehaviour
 
     private GameObject currentTowerPrefab;
     private GameObject currentPreviewPrefab;
-
+    private int currentTowerPrice;
 
     void Awake()
     {
@@ -92,21 +93,40 @@ public class TowerPlacer : MonoBehaviour
         }
 
         TowerInfo info = towerDict[key];
-        StartPlacing(info.towerPrefab, info.previewPrefab);
+
+        if(PlayerStatsManager.Instance.CheckGold(info.price))
+        {
+            StartPlacing(info.towerPrefab, info.previewPrefab);
+            currentTowerPrice = info.price;
+        }
+        else
+        {
+            Debug.Log("Not enough gold!");
+            return;
+        }
     }
 
-    void StartPlacing(GameObject tower, GameObject preview)
+    void StartPlacing(GameObject towerPrefab, GameObject previewPrefab)
     {
         if (previewInstance != null)
             Destroy(previewInstance);
 
-        currentTowerPrefab = tower;
-        currentPreviewPrefab = preview;
+        currentTowerPrefab = towerPrefab;
+        currentPreviewPrefab = previewPrefab;
 
         previewInstance = Instantiate(currentPreviewPrefab);
         previewInstance.SetActive(true);
 
-        SetPreviewColor(Color.red);
+        TowerPreview preview = previewInstance.GetComponent<TowerPreview>();
+
+        preview.rangeVisualizer.SetActive(true);
+
+        float towerRange = currentTowerPrefab.GetComponent<TowerBase>().range;
+
+        float scale = towerRange * 2f;
+        preview.rangeVisualizer.transform.localScale =
+            new Vector3(scale, 0.01f, scale);
+
         isPlacing = true;
     }
 
@@ -122,7 +142,9 @@ public class TowerPlacer : MonoBehaviour
     }
     void PlaceTower(Vector3 pos, Vector3Int cellPos)
     {
+
         Instantiate(currentTowerPrefab, pos, Quaternion.identity);
+        PlayerStatsManager.Instance.SpendGold(currentTowerPrice);
 
         mapData.SetCell(cellPos.x - mapData.originX, cellPos.y - mapData.originY, CellType.Blocked);
 

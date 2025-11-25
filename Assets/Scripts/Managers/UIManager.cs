@@ -21,9 +21,12 @@ public class UIManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        towerInfoPanel.SetActive(false);
-
-        Localization.LoadLanguage("ko");
+        Localization.LoadLanguage("en");
+    }
+    private void Start()
+    {
+        UpdateGoldUI(PlayerStatsManager.Instance.gold);
+        UpdateHPUI(PlayerStatsManager.Instance.currentHP);
     }
 
     private void Update()
@@ -53,12 +56,12 @@ public class UIManager : MonoBehaviour
 
     public void UpdateGoldUI(int gold)
     {
-        goldText.text = gold.ToString();
+        goldText.text = $"Gold: {PlayerStatsManager.Instance.gold}";
     }
 
     public void UpdateHPUI(int hp)
     {
-        hpText.text = hp.ToString();
+        hpText.text = $"Life: {PlayerStatsManager.Instance.currentHP}";
     }
 
 }

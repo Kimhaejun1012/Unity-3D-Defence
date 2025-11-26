@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 4128259834708936919}
   - component: {fileID: -3303746170147223036}
   - component: {fileID: -6198290154796170445}
-  - component: {fileID: -2021525258719174311}
   - component: {fileID: 4694882957191913324}
   m_Layer: 6
   m_Name: TestMonster
@@ -150,18 +149,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b99d202c421a42f46b08005341aa4646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-2021525258719174311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245857654887785465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c6600c6a6e8ca54ca04717f8ed41fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &4694882957191913324

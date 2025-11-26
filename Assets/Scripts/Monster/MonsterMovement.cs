@@ -5,12 +5,20 @@ using UnityEngine;
 public class MonsterMovement : MonoBehaviour
 {
     private float speed;
+    private float baseSpeed;
     private int index;
+
+    private float currentSlowPercent;
+    private float slowTimer;
     private Transform[] waypoints;
     public float Speed
     {
         get => speed;
         set => speed = value;
+    }
+    private void Start()
+    {
+        baseSpeed = Speed;
     }
     public void Init(float moveSpeed, Transform[] transforms)
     {
@@ -22,6 +30,19 @@ public class MonsterMovement : MonoBehaviour
     }
 
     void Update()
+    {
+        if (slowTimer > 0f)
+        {
+            slowTimer -= Time.deltaTime;
+            if (slowTimer <= 0f)
+            {
+                currentSlowPercent = 0f;
+                Speed = baseSpeed;
+            }
+        }
+        Move();
+    }
+    private void Move()
     {
         if (waypoints == null || index >= waypoints.Length) return;
 
@@ -35,5 +56,14 @@ public class MonsterMovement : MonoBehaviour
         {
             GetComponent<PooledObject>().Return();
         }
+    }
+    public void ApplySlow(float percent, float duration)
+    {
+        if (percent < currentSlowPercent) return;
+
+        currentSlowPercent = percent;
+        slowTimer = duration;
+
+        Speed = baseSpeed * (1f - percent);
     }
 }

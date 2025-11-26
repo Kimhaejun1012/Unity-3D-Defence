@@ -1,0 +1,7 @@
+﻿Wave,MonsterType,Count,Interval
+1,TestMonster,1,0.8
+1,TestMonster,2,1.2
+2,TestMonster,3,0.6
+2,TestMonster,4,0.1
+3,TestMonster,5,0.5
+4,TestMonster,1,0

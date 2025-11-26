@@ -15,4 +15,11 @@ public class MonsterSpawner : MonoBehaviour
             monster.Init(WayPointManager.Instance.waypoints);
         }
     }
+    public void Spawn(string key)
+    {
+        var obj = ObjectPoolManager.Instance.Spawn(key, Vector3.zero, Quaternion.identity);
+        var monster = obj.GetComponent<Monster>();
+
+        monster.Init(WayPointManager.Instance.waypoints);
+    }
 }

@@ -38,7 +38,6 @@ public class TowerBase : MonoBehaviour
 
         if (attackTimer >= 1f / attackSpeed && target != null)
         {
-            float dist = Vector3.Distance(transform.position, target.transform.position);
             AnimationTrigger();
             attackTimer = 0f;
         }

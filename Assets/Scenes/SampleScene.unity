@@ -10969,6 +10969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterKey: TestMonster
+  spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1720021783
 Transform:
   m_ObjectHideFlags: 0

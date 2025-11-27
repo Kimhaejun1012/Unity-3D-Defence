@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd9299a485653794483ff05ea70c9c6f, type: 3}
-  m_Name: Test Monster Data
+  m_Name: Zombie
   m_EditorClassIdentifier: 
-  monsterName: TestMonster
-  maxHP: 20
-  moveSpeed: 3
-  reward: 10
+  monsterName: Zombie
+  maxHP: 30
+  moveSpeed: 1
+  reward: 15

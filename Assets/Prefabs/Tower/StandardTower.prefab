@@ -4087,6 +4087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileKey: StandardProjectile
+  muzzleKey: StandardMuzzle
   firePoint: {fileID: 3792148494110423191}
   projectileSpeed: 10
 --- !u!136 &1883615421670369908

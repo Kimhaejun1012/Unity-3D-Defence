@@ -32,10 +32,10 @@ public abstract class ProjectileBase : MonoBehaviour
     {
         if (other.TryGetComponent(out Monster monster))
         {
-            OnHit(monster);
+            OnHit(monster, transform.position);
             GetComponent<PooledObject>().Return();
         }
     }
 
-    protected abstract void OnHit(Monster monster);
+    protected abstract void OnHit(Monster monster, Vector3 pos);
 }

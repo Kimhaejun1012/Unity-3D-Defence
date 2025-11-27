@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileAttackModule : MonoBehaviour, IAttackModule
 {
     public string projectileKey;
+    public string muzzleKey;
     public Transform firePoint;
 
     public float projectileSpeed = 10f;
@@ -15,6 +16,11 @@ public class ProjectileAttackModule : MonoBehaviour, IAttackModule
 
         GameObject proj = ObjectPoolManager.Instance.Spawn(
             projectileKey,
+            firePoint.position,
+            firePoint.rotation
+        );
+        ObjectPoolManager.Instance.Spawn(
+            muzzleKey,
             firePoint.position,
             firePoint.rotation
         );

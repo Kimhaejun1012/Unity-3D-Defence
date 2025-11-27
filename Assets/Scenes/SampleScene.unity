@@ -1826,7 +1826,13 @@ MonoBehaviour:
     prefab: {fileID: 245857654887785465, guid: 98ed9e62ce796b24d8ef02853bb31b11, type: 3}
     initialSize: 10
   - key: StandardProjectile
-    prefab: {fileID: 3969055521979703354, guid: beee8b2d94015514e8234d34d95700ab, type: 3}
+    prefab: {fileID: 1367524025346344, guid: d264cbe4dad4a204f9ebcf78fe95df83, type: 3}
+    initialSize: 10
+  - key: StandardMuzzle
+    prefab: {fileID: 1249093948453542, guid: 2cfebc94754323f4aa1a61bd4b2a4afd, type: 3}
+    initialSize: 10
+  - key: StandardHit
+    prefab: {fileID: 1875137826284996, guid: 5c4bb47d811c4fb45b7e46ae098753ec, type: 3}
     initialSize: 10
   - key: SlowProjectile
     prefab: {fileID: 3969055521979703354, guid: 3809de37b9d411a4ba7fde75923d44e5, type: 3}
@@ -7698,7 +7704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &989274424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7715,7 +7721,7 @@ MonoBehaviour:
   csvName: waves
   currentWaveIndex: -1
   isWaveRunning: 0
-  timeBetweenWaves: 5
+  timeBetweenWaves: 1
 --- !u!4 &989274425
 Transform:
   m_ObjectHideFlags: 0

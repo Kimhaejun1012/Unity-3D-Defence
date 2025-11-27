@@ -8,7 +8,7 @@ public class SlowProjectile : ProjectileBase
     public float slowPercent;
     public float slowDuration;
 
-    protected override void OnHit(Monster monster)
+    protected override void OnHit(Monster monster, Vector3 pos)
     {
         monster.GetComponent<MonsterHealth>().TakeDamage(damage);
         monster.ApplySlow(slowPercent, slowDuration);

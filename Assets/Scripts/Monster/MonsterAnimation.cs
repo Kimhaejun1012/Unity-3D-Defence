@@ -10,7 +10,7 @@ public class MonsterAnimation : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponent<Animator>();
         movement = GetComponent<MonsterMovement>();
         health = GetComponent<MonsterHealth>();
     }
@@ -32,6 +32,6 @@ public class MonsterAnimation : MonoBehaviour
 
     private void PlayDie()
     {
-        anim.SetBool("Dead", true);
+        anim.SetTrigger("Die");
     }
 }

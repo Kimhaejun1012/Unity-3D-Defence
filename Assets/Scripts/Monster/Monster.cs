@@ -13,6 +13,7 @@ public class Monster : MonoBehaviour
         movement = GetComponent<MonsterMovement>();
         health = GetComponent<MonsterHealth>();
     }
+
     public void Init(Transform[] transforms)
     {
         health.Init(data.maxHP);

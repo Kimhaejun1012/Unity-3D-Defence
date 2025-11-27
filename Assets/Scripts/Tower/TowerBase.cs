@@ -1,17 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class TowerBase : MonoBehaviour
 {
     [Header("Tower Stats")]
     public float range = 5f;
     public float attackSpeed = 1f;
+    public event Action OnFire;
 
     public GameObject rangeVisualizer;
 
     private float attackTimer = 0f;
     private IAttackModule[] attackModules;
+    Monster target;
 
     private void Awake()
     {
@@ -26,16 +30,25 @@ public class TowerBase : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        if (attackTimer >= 1f / attackSpeed)
+        target = TargetFinder.GetNearestEnemy(transform.position, range);
+
+        transform.LookAt(target?.transform);
+        Vector3 rot = transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(0, rot.y, 0);
+
+        if (attackTimer >= 1f / attackSpeed && target != null)
         {
+            float dist = Vector3.Distance(transform.position, target.transform.position);
+            AnimationTrigger();
             attackTimer = 0f;
-            Attack();
         }
     }
-
-    private void Attack()
+    public void AnimationTrigger()
     {
-        Monster target = TargetFinder.GetNearestEnemy(transform.position, range);
+        OnFire?.Invoke();
+    }
+    public void ModulesExecute()
+    {
         if (target == null) return;
 
         foreach (var module in attackModules)

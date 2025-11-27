@@ -14292,6 +14292,7 @@ GameObject:
   - component: {fileID: 7050432933187716939}
   - component: {fileID: -9068815452638291155}
   - component: {fileID: 1141519855090778694}
+  - component: {fileID: 130642270316530996}
   m_Layer: 8
   m_Name: SlowTower
   m_TagString: Untagged
@@ -14430,7 +14431,7 @@ Animator:
   m_GameObject: {fileID: 8456026636906933522}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6d22c81578a696342baab4de6df74ec9, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5a448eb3676540746b94299098f9922c, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea7f05699dfb2a74cb41e93cd15b45bf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14494,6 +14495,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &130642270316530996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456026636906933522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820e20caf8220df42a6647f96a08bdc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8458166403949455150
 GameObject:
   m_ObjectHideFlags: 0

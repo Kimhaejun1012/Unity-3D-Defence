@@ -1834,14 +1834,14 @@ MonoBehaviour:
   - key: StandardHit
     prefab: {fileID: 1875137826284996, guid: 5c4bb47d811c4fb45b7e46ae098753ec, type: 3}
     initialSize: 10
-  - key: SlowProjectile
-    prefab: {fileID: 3969055521979703354, guid: 3809de37b9d411a4ba7fde75923d44e5, type: 3}
-    initialSize: 10
   - key: Zombie
     prefab: {fileID: 7758961850529990477, guid: 08e764276e53c2f48873d608b8cf2d8b, type: 3}
     initialSize: 10
   - key: Horse
     prefab: {fileID: 5291084092149664695, guid: 9c88a796a209e35439e916c191f7c836, type: 3}
+    initialSize: 10
+  - key: SlowEffect
+    prefab: {fileID: 1639039892610070, guid: 85eb9e3513a81084b826042d5ef0b597, type: 3}
     initialSize: 10
 --- !u!4 &270894445
 Transform:

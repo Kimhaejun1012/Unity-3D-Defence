@@ -14290,9 +14290,9 @@ GameObject:
   - component: {fileID: 5889532690348912150}
   - component: {fileID: 2744231921652903177}
   - component: {fileID: 7050432933187716939}
-  - component: {fileID: -9068815452638291155}
   - component: {fileID: 1141519855090778694}
   - component: {fileID: 130642270316530996}
+  - component: {fileID: -884970581729341308}
   m_Layer: 8
   m_Name: SlowTower
   m_TagString: Untagged
@@ -14457,21 +14457,6 @@ MonoBehaviour:
   range: 5
   attackSpeed: 2
   rangeVisualizer: {fileID: 1366376961841945727}
---- !u!114 &-9068815452638291155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8456026636906933522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1fdfaa10e495b240911d8f90923c5c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileKey: SlowProjectile
-  firePoint: {fileID: 5889532690348912150}
-  projectileSpeed: 10
 --- !u!136 &1141519855090778694
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14507,6 +14492,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820e20caf8220df42a6647f96a08bdc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-884970581729341308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456026636906933522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ef523cf2778dd44a449f1d78761096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  duration: 2
+  slowPercent: 0.6
+  attackEffectKey: SlowEffect
 --- !u!1 &8458166403949455150
 GameObject:
   m_ObjectHideFlags: 0

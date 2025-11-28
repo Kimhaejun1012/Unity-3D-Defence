@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class TowerBase : MonoBehaviour
 {
-    [Header("Tower Stats")]
-    public float range = 5f;
-    public float attackSpeed = 1f;
-    public event Action OnFire;
+    public TowerData data;
 
+    public event Action OnFire;
     public GameObject rangeVisualizer;
 
     private float attackTimer = 0f;
@@ -21,7 +19,7 @@ public class TowerBase : MonoBehaviour
         attackModules = GetComponents<IAttackModule>();
 
         rangeVisualizer.SetActive(false);
-        float scale = range * 2f;
+        float scale = data.range * 2f;
         rangeVisualizer.transform.localScale = new Vector3(scale, 0.01f, scale);
     }
 
@@ -29,13 +27,13 @@ public class TowerBase : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        target = TargetFinder.GetNearestEnemy(transform.position, range);
+        target = TargetFinder.GetNearestEnemy(transform.position, data.range);
 
         transform.LookAt(target?.transform);
         Vector3 rot = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0, rot.y, 0);
 
-        if (attackTimer >= 1f / attackSpeed && target != null)
+        if (attackTimer >= 1f / data.attackSpeed && target != null)
         {
             AnimationTrigger();
             attackTimer = 0f;

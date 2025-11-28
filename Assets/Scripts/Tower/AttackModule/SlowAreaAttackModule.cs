@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
 {
-    public float radius;
     public float duration;
     public float slowPercent;
-
+    private TowerData data;
     public string attackEffectKey;
+
+    private void Awake()
+    {
+        data = GetComponent<TowerBase>().data;
+    }
+
     public void Execute(Monster ignored)
     {
         ObjectPoolManager.Instance.Spawn(
@@ -16,7 +21,7 @@ public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
             transform.position,
             Quaternion.identity
         );
-        Collider[] hits = Physics.OverlapSphere(transform.position, radius, LayerMask.GetMask("Monster"));
+        Collider[] hits = Physics.OverlapSphere(transform.position, data.range, LayerMask.GetMask("Monster"));
 
         foreach (var hit in hits)
         {

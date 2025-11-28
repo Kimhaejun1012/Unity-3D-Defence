@@ -4071,8 +4071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc20df21cc984f4fb6d7e2f20417e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  attackSpeed: 2
+  data: {fileID: 11400000, guid: ca2ff8358e194ce44b0ea9f1cd76bf72, type: 2}
   rangeVisualizer: {fileID: 5863672579632149705}
 --- !u!114 &6637946082758842408
 MonoBehaviour:

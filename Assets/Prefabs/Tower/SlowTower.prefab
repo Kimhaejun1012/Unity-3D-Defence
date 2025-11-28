@@ -14454,8 +14454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc20df21cc984f4fb6d7e2f20417e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  attackSpeed: 2
+  data: {fileID: 11400000, guid: fa68b3e20d03c844392030af6a1d4d16, type: 2}
   rangeVisualizer: {fileID: 1366376961841945727}
 --- !u!136 &1141519855090778694
 CapsuleCollider:
@@ -14504,7 +14503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ef523cf2778dd44a449f1d78761096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
   duration: 2
   slowPercent: 0.6
   attackEffectKey: SlowEffect

@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9299a485653794483ff05ea70c9c6f, type: 3}
-  m_Name: Test Monster Data
+  m_Script: {fileID: 11500000, guid: d32e7bcd8bc60bf438e08b56df6642e5, type: 3}
+  m_Name: SplashTower
   m_EditorClassIdentifier: 
-  monsterName: TestMonster
-  maxHP: 15
-  moveSpeed: 3
-  reward: 10
+  range: 4
+  attackSpeed: 2
+  baseDamage: 2

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class StandardPrjectile : ProjectileBase
 {
-    public int damage;
     public string key;
-    protected override void OnHit(Monster monster, Vector3 pos)
+    protected override void OnHit(Monster monster)
     {
         monster.GetComponent<MonsterHealth>().TakeDamage(damage);
-        ObjectPoolManager.Instance.Spawn(key, pos, Quaternion.identity);
+        ObjectPoolManager.Instance.Spawn(key, transform.position, Quaternion.identity);
     }
 }

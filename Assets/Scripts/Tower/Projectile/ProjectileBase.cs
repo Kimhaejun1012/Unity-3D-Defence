@@ -7,10 +7,14 @@ public abstract class ProjectileBase : MonoBehaviour
     private Monster target;
     private float speed;
 
-    public void Init(Monster target, float speed)
+    protected int damage;
+
+    public void Init(Monster target, float speed,int damage)
     {
         this.target = target;
         this.speed = speed;
+
+        this.damage = damage;
     }
 
     protected virtual void Update()
@@ -32,10 +36,10 @@ public abstract class ProjectileBase : MonoBehaviour
     {
         if (other.TryGetComponent(out Monster monster))
         {
-            OnHit(monster, transform.position);
+            OnHit(monster);
             GetComponent<PooledObject>().Return();
         }
     }
 
-    protected abstract void OnHit(Monster monster, Vector3 pos);
+    protected abstract void OnHit(Monster monster);
 }

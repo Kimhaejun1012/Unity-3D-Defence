@@ -1,5 +1,5 @@
 ﻿Wave,MonsterType,Count,Interval
-1,TestMonster,1,0.8
+1,TestMonster,10,0.1
 1,TestMonster,2,1.2
 2,Zombie,1,0.6
 2,Zombie,2,0.1

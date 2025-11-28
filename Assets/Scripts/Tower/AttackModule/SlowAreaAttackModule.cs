@@ -6,8 +6,8 @@ public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
 {
     public float duration;
     public float slowPercent;
-    private TowerData data;
     public string attackEffectKey;
+    private TowerData data;
 
     private void Awake()
     {

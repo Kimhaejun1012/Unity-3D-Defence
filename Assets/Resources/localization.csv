@@ -3,3 +3,5 @@ TOWER_Standard_NAME,기본 타워,Standard Tower
 TOWER_Standard_DESC,기본 속성의 공격을 발사합니다.,Standard Attack Excute.
 TOWER_Slow_NAME,얼음 타워,Ice Tower
 TOWER_Slow_DESC,적을 느리게 만듭니다.,Slows enemies down.
+TOWER_Splash_NAME,범위 타워.,Range Tower.
+TOWER_Splash_DESC,범위 공격을 합니다.,Range Attack Excute.

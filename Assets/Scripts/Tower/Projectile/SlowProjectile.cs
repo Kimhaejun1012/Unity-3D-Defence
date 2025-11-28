@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class SlowProjectile : ProjectileBase
 {
-    public int damage;
     public float slowPercent;
     public float slowDuration;
 
-    protected override void OnHit(Monster monster, Vector3 pos)
+    protected override void OnHit(Monster monster)
     {
         monster.GetComponent<MonsterHealth>().TakeDamage(damage);
         monster.ApplySlow(slowPercent, slowDuration);

@@ -7,7 +7,6 @@ public class MonsterMovement : MonoBehaviour
     private float speed;
     private float baseSpeed;
     private int index;
-
     private float currentSlowPercent;
     private float slowTimer;
     private Transform[] waypoints;
@@ -65,5 +64,21 @@ public class MonsterMovement : MonoBehaviour
         slowTimer = duration;
 
         Speed = baseSpeed * (1f - percent);
+    }
+    public void ApplyStun(float duration)
+    {
+        StartCoroutine(StunRoutine(duration));
+    }
+
+    private IEnumerator StunRoutine(float t)
+    {
+
+        speed = 0f;
+        GetComponent<Animator>().speed = 0f;
+
+        yield return new WaitForSeconds(t);
+
+        GetComponent<Animator>().speed = 1f;
+        Speed = baseSpeed;
     }
 }

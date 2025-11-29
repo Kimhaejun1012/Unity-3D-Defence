@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
 {
-    public float duration;
-    public float slowPercent;
+    public float[] duration = { 0.1f, 0.2f, 0.3f };
+    public float[] slowPercent = { 0.1f, 0.2f, 0.3f };
     public string attackEffectKey;
-    private TowerData data;
+    private TowerBase tower;
 
     private void Awake()
     {
-        data = GetComponent<TowerBase>().data;
+        tower = GetComponent<TowerBase>();
     }
 
     public void Execute(Monster ignored)
@@ -21,13 +21,13 @@ public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
             transform.position,
             Quaternion.identity
         );
-        Collider[] hits = Physics.OverlapSphere(transform.position, data.range, LayerMask.GetMask("Monster"));
+        Collider[] hits = Physics.OverlapSphere(transform.position, tower.data.range[tower.level], LayerMask.GetMask("Monster"));
 
         foreach (var hit in hits)
         {
             Monster m = hit.GetComponent<Monster>();
             if (m == null) continue;
-            m.ApplySlow(slowPercent, duration);
+            m.ApplySlow(slowPercent[tower.level], duration[tower.level]);
         }
     }
 }

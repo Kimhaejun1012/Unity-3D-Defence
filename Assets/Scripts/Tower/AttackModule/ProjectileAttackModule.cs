@@ -9,11 +9,11 @@ public class ProjectileAttackModule : MonoBehaviour, IAttackModule
     public Transform firePoint;
 
     public float projectileSpeed = 10f;
-    private TowerData data;
+    private TowerBase tower;
 
     private void Awake()
     {
-        data = GetComponent<TowerBase>().data;
+        tower = GetComponent<TowerBase>();
     }
     public void Execute(Monster target)
     {
@@ -31,6 +31,6 @@ public class ProjectileAttackModule : MonoBehaviour, IAttackModule
         );
 
         ProjectileBase p = proj.GetComponent<ProjectileBase>();
-        p.Init(target, projectileSpeed, data.baseDamage);
+        p.Init(target, projectileSpeed, tower.data.baseDamage[tower.level], tower.level);
     }
 }

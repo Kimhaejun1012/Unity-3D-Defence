@@ -6,10 +6,11 @@ using UnityEngine;
 public class TowerBase : MonoBehaviour
 {
     public TowerData data;
+    public int level = 0;
 
     public event Action OnFire;
     public GameObject rangeVisualizer;
-
+    
     private float attackTimer = 0f;
     private IAttackModule[] attackModules;
     Monster target;
@@ -19,7 +20,7 @@ public class TowerBase : MonoBehaviour
         attackModules = GetComponents<IAttackModule>();
 
         rangeVisualizer.SetActive(false);
-        float scale = data.range * 2f;
+        float scale = data.range[level] * 2f;
         rangeVisualizer.transform.localScale = new Vector3(scale, 0.01f, scale);
     }
 
@@ -27,13 +28,13 @@ public class TowerBase : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        target = TargetFinder.GetNearestEnemy(transform.position, data.range);
+        target = TargetFinder.GetNearestEnemy(transform.position, data.range[level]);
 
         transform.LookAt(target?.transform);
         Vector3 rot = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0, rot.y, 0);
 
-        if (attackTimer >= 1f / data.attackSpeed && target != null)
+        if (attackTimer >= 1f / data.attackSpeed[level] && target != null)
         {
             AnimationTrigger();
             attackTimer = 0f;
@@ -55,5 +56,14 @@ public class TowerBase : MonoBehaviour
     public void ShowRange(bool show)
     {
         rangeVisualizer.SetActive(show);
+    }
+    public void LevelUp()
+    {
+        if(level < data.maxLevel - 1)
+        {
+            level++;
+            float scale = data.range[level] * 2f;
+            rangeVisualizer.transform.localScale = new Vector3(scale, 0.01f, scale);
+        }
     }
 }

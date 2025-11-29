@@ -121,7 +121,7 @@ public class TowerPlacer : MonoBehaviour
 
         preview.rangeVisualizer.SetActive(true);
 
-        float towerRange = currentTowerPrefab.GetComponent<TowerBase>().data.range;
+        float towerRange = currentTowerPrefab.GetComponent<TowerBase>().data.range[0];
 
         float scale = towerRange * 2f;
         preview.rangeVisualizer.transform.localScale =

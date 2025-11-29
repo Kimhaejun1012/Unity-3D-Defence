@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class LightningProjectile : ProjectileBase
@@ -17,9 +16,9 @@ public class LightningProjectile : ProjectileBase
     private List<Monster> hitTargets = new List<Monster>();
     private List<Vector3> linePoints = new List<Vector3>();
 
-    public override void Init(Monster target, float speed, int damage)
+    public override void Init(Monster target, float speed, int damage, int level)
     {
-        base.Init(target, speed, damage);
+        base.Init(target, speed, damage, level);
         hitTargets.Clear();
 
         linePoints.Clear();

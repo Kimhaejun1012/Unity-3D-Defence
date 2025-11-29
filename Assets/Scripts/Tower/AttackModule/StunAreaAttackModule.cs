@@ -5,14 +5,14 @@ using UnityEngine;
 public class StunAreaAttackModule : MonoBehaviour, IAttackModule
 {
     [Header("Stun Settings")]
-    public float stunDuration = 0.3f;
+    public float[] stunDuration = {0.1f,0.2f,0.3f};
 
     public string attackEffectKey;
-    private TowerData data;
+    private TowerBase tower;
 
     private void Awake()
     {
-        data = GetComponent<TowerBase>().data;
+        tower = GetComponent<TowerBase>();
     }
 
     public void Execute(Monster target)
@@ -25,7 +25,7 @@ public class StunAreaAttackModule : MonoBehaviour, IAttackModule
 
         Collider[] hits = Physics.OverlapSphere(
             transform.position,
-            data.range,
+            tower.data.range[tower.level],
             LayerMask.GetMask("Monster")
         );
 
@@ -34,7 +34,7 @@ public class StunAreaAttackModule : MonoBehaviour, IAttackModule
             Monster m = col.GetComponent<Monster>();
             if (m == null) continue;
 
-            m.ApplyStun(stunDuration);
+            m.ApplyStun(stunDuration[tower.level]);
         }
     }
 }

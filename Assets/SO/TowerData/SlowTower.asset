@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32e7bcd8bc60bf438e08b56df6642e5, type: 3}
   m_Name: SlowTower
   m_EditorClassIdentifier: 
-  range: 3
-  attackSpeed: 0.5
-  baseDamage: 1
+  maxLevel: 0
+  range:
+  - 1
+  - 2
+  - 3
+  attackSpeed:
+  - 3
+  - 2
+  - 1
+  baseDamage: 010000000200000003000000

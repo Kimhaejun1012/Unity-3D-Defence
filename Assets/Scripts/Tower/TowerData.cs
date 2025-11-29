@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TowerData", menuName = "DF/Tower Data")]
 public class TowerData : ScriptableObject
 {
-    public float range;
-    public float attackSpeed;
-    public int baseDamage;
+    public int maxLevel;
+    public float[] range;
+    public float[] attackSpeed;
+    public int[] baseDamage;
 }

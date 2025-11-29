@@ -1642,6 +1642,152 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4025826744558684, guid: bf29627f3309070499d011c505013738, type: 3}
   m_PrefabInstance: {fileID: 176594738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &195618701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195618702}
+  - component: {fileID: 195618706}
+  - component: {fileID: 195618705}
+  - component: {fileID: 195618704}
+  - component: {fileID: 195618703}
+  m_Layer: 5
+  m_Name: Lightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &195618702
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195618701}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 700081224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &195618703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195618701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca58e0576ba5929448a13fba95f583bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerKey: Lightning
+--- !u!114 &195618704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195618701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 195618705}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1516349617}
+        m_TargetAssemblyTypeName: TowerPlacer, Assembly-CSharp
+        m_MethodName: SelectTower
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Lightning
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &195618705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195618701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2467fd7f0af6c4e42a5ff3cdcb943bef, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &195618706
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195618701}
+  m_CullTransparentMesh: 1
 --- !u!1001 &216370761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1997,6 +2143,15 @@ MonoBehaviour:
     initialSize: 10
   - key: SplashProjectile
     prefab: {fileID: 1189473170883990, guid: 73d114aa36119254e851bd9e4dd20b66, type: 3}
+    initialSize: 10
+  - key: LightningHit
+    prefab: {fileID: 1710709090493062, guid: 3d588aed10f1f474a8da0f8cbb21d556, type: 3}
+    initialSize: 10
+  - key: LightningMuzzle
+    prefab: {fileID: 1252438475236734, guid: 3c3b87c0292637e48a3d4c5b87d280de, type: 3}
+    initialSize: 10
+  - key: LightningProjectile
+    prefab: {fileID: 1907026455076624, guid: 8bacaae5bb38e434f95e4c32dfc0c969, type: 3}
     initialSize: 10
 --- !u!4 &270894445
 Transform:
@@ -5453,6 +5608,7 @@ RectTransform:
   - {fileID: 107418198}
   - {fileID: 377757425}
   - {fileID: 19080915}
+  - {fileID: 195618702}
   m_Father: {fileID: 1628578961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -10230,6 +10386,7 @@ MonoBehaviour:
   - Standard
   - Slow
   - Splash
+  - Lightning
   towerValues:
   - towerPrefab: {fileID: 2260714499880022373, guid: 1a5e56b64065a4a448a842a86bd32259, type: 3}
     previewPrefab: {fileID: 2260714499880022373, guid: 9d2a082ef7dc0894ca8d262396b5c856, type: 3}
@@ -10240,6 +10397,9 @@ MonoBehaviour:
   - towerPrefab: {fileID: 8183113043991488901, guid: 2657f8f1788a369459dc185d61c06560, type: 3}
     previewPrefab: {fileID: 8183113043991488901, guid: ae48820f861aeb145a34c09c59632e83, type: 3}
     price: 25
+  - towerPrefab: {fileID: 7390253015761833798, guid: d26fa0e1cfc5cfe4cbad92a4d2f53329, type: 3}
+    previewPrefab: {fileID: 7390253015761833798, guid: 7c229d2d25ac65e499ca1e45fb1cb973, type: 3}
+    price: 30
 --- !u!1001 &1529255687
 PrefabInstance:
   m_ObjectHideFlags: 0

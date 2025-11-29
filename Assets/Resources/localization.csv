@@ -5,3 +5,5 @@ TOWER_Slow_NAME,얼음 타워,Ice Tower
 TOWER_Slow_DESC,적을 느리게 만듭니다.,Slows enemies down.
 TOWER_Splash_NAME,범위 타워.,Range Tower.
 TOWER_Splash_DESC,범위 공격을 합니다.,Range Attack Excute.
+TOWER_Lightning_NAME,번개 타워.,Lightning Tower.
+TOWER_Lightning_DESC,연쇄 공격을 합니다.,Lightning Attack Excute.

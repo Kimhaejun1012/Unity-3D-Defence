@@ -9,7 +9,7 @@ public abstract class ProjectileBase : MonoBehaviour
 
     protected int damage;
 
-    public void Init(Monster target, float speed,int damage)
+    public virtual void Init(Monster target, float speed,int damage)
     {
         this.target = target;
         this.speed = speed;

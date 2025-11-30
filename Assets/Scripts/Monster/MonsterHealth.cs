@@ -7,15 +7,20 @@ using UnityEngine;
 public class MonsterHealth : MonoBehaviour, IDamageable
 {
     public event Action OnDie;
+    public event Action<float> OnHealthChanged;
+
     public bool isDie = false;
+    private int maxHP;
     private int currentHP;
     public void Init(int hp)
     {
+        maxHP = hp;
         currentHP = hp;
     }
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
+        OnHealthChanged?.Invoke((float)currentHP / maxHP);
 
         if (currentHP <= 0f)
         {

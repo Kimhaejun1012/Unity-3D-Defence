@@ -10,10 +10,16 @@ public class MonsterMovement : MonoBehaviour
     private float currentSlowPercent;
     private float slowTimer;
     private Transform[] waypoints;
+
+    public MonsterUI monsterUI;
+
     public float Speed
     {
         get => speed;
         set => speed = value;
+    }
+    private void Awake()
+    {
     }
     private void Start()
     {
@@ -35,6 +41,7 @@ public class MonsterMovement : MonoBehaviour
             slowTimer -= Time.deltaTime;
             if (slowTimer <= 0f)
             {
+                monsterUI.HideStatus("Slow");
                 currentSlowPercent = 0f;
                 Speed = baseSpeed;
             }
@@ -60,6 +67,7 @@ public class MonsterMovement : MonoBehaviour
     {
         if (percent < currentSlowPercent) return;
 
+        monsterUI.ShowStatus("Slow");
         currentSlowPercent = percent;
         slowTimer = duration;
 
@@ -74,10 +82,10 @@ public class MonsterMovement : MonoBehaviour
     {
         speed = 0f;
         GetComponent<Animator>().speed = 0f;
-
+        monsterUI.ShowStatus("Stun");
         yield return new WaitForSeconds(t);
-
         GetComponent<Animator>().speed = 1f;
+        monsterUI.HideStatus("Stun");
         Speed = baseSpeed;
     }
 }

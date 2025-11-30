@@ -14,6 +14,6 @@ public static class Localization
     {
         if (table.ContainsKey(key))
             return table[key];
-        return key;
+        return null;
     }
 }

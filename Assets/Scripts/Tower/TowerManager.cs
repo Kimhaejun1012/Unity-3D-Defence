@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TowerManager : MonoBehaviour
     public LayerMask towerLayerMask;
 
     private TowerBase currentTower;
+    public TowerBase CurrentTower => currentTower;
 
     private void Awake()
     {
@@ -18,6 +20,9 @@ public class TowerManager : MonoBehaviour
     }
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -40,12 +45,15 @@ public class TowerManager : MonoBehaviour
 
         currentTower = tower;
         currentTower.ShowRange(true);
+
+        UIManager.Instance.ShowTowerStatsInfo(currentTower.data.key, currentTower.data, currentTower.level);
     }
     void DeselectTower()
     {
         if (currentTower != null)
         {
             currentTower.ShowRange(false);
+            UIManager.Instance.HideTowerStatsInfo();
             currentTower = null;
         }
     }

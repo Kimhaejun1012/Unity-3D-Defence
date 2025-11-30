@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
 {
-    public float[] duration = { 0.1f, 0.2f, 0.3f };
-    public float[] slowPercent = { 0.1f, 0.2f, 0.3f };
+    private float[] duration = { 3f, 4f, 5f };
+    private float[] slowPercent = { 0.3f, 0.4f, 0.5f };
     public string attackEffectKey;
     private TowerBase tower;
 
@@ -26,6 +26,8 @@ public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
         foreach (var hit in hits)
         {
             Monster m = hit.GetComponent<Monster>();
+            Debug.Log(slowPercent[tower.level]);
+            Debug.Log(duration[tower.level]);
             if (m == null) continue;
             m.ApplySlow(slowPercent[tower.level], duration[tower.level]);
         }

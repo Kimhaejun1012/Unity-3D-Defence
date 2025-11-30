@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32e7bcd8bc60bf438e08b56df6642e5, type: 3}
   m_Name: SlowTower
   m_EditorClassIdentifier: 
-  maxLevel: 0
+  key: SlowTower
+  maxLevel: 3
+  levelUpPrice: 3200000064000000
   range:
   - 1
   - 2

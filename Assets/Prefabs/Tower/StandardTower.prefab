@@ -4072,6 +4072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: ca2ff8358e194ce44b0ea9f1cd76bf72, type: 2}
+  level: 0
   rangeVisualizer: {fileID: 5863672579632149705}
 --- !u!114 &6637946082758842408
 MonoBehaviour:
@@ -4104,7 +4105,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

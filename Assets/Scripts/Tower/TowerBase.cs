@@ -59,8 +59,9 @@ public class TowerBase : MonoBehaviour
     }
     public void LevelUp()
     {
-        if(level < data.maxLevel - 1)
+        if(level < data.maxLevel - 1 && PlayerStatsManager.Instance.gold >= data.levelUpPrice[level])
         {
+            PlayerStatsManager.Instance.SpendGold(data.levelUpPrice[level]);
             level++;
             float scale = data.range[level] * 2f;
             rangeVisualizer.transform.localScale = new Vector3(scale, 0.01f, scale);

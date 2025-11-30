@@ -12801,6 +12801,7 @@ GameObject:
   - component: {fileID: -3453816425826437922}
   - component: {fileID: -890287291388455878}
   - component: {fileID: 4697219776219761660}
+  - component: {fileID: 6881144031597910937}
   m_Layer: 8
   m_Name: LightningTower
   m_TagString: Untagged
@@ -12975,6 +12976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 38f661fa0e863204da73630c06aafd80, type: 2}
+  level: 0
   rangeVisualizer: {fileID: 4320581257848049721}
 --- !u!114 &4697219776219761660
 MonoBehaviour:
@@ -12992,6 +12994,29 @@ MonoBehaviour:
   muzzleKey: LightningMuzzle
   firePoint: {fileID: 4967311938112439076}
   projectileSpeed: 10
+--- !u!136 &6881144031597910937
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390253015761833798}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7488999526278043638
 GameObject:
   m_ObjectHideFlags: 0

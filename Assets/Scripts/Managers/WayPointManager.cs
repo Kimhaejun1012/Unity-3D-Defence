@@ -6,10 +6,32 @@ public class WayPointManager : MonoBehaviour
 {
     public static WayPointManager Instance;
 
+    public Transform waypointParent;
+
+    [HideInInspector]
     public Transform[] waypoints;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        LoadWaypoints();
+    }
+
+    private void LoadWaypoints()
+    {
+        if (waypointParent == null)
+        {
+            return;
+        }
+
+        int count = waypointParent.childCount;
+        waypoints = new Transform[count];
+
+        for (int i = 0; i < count; i++)
+        {
+            waypoints[i] = waypointParent.GetChild(i);
+        }
     }
 }

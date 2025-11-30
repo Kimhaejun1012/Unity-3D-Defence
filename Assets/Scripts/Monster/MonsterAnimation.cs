@@ -32,6 +32,11 @@ public class MonsterAnimation : MonoBehaviour
 
     private void PlayDie()
     {
+        anim.speed = 1;
         anim.SetTrigger("Die");
+    }
+    public void OnDieAnimationComplete()
+    {
+        GetComponent<PooledObject>().Return();
     }
 }

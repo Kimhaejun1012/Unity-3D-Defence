@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   monsterName: Zombie
-  maxHP: 30
+  maxHP: 1
   moveSpeed: 1
   reward: 15

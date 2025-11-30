@@ -6,6 +6,8 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public MonsterData data;
+    public Transform targetPoint;
+
     private MonsterMovement movement;
     private MonsterHealth health;
 
@@ -14,11 +16,23 @@ public class Monster : MonoBehaviour
         movement = GetComponent<MonsterMovement>();
         health = GetComponent<MonsterHealth>();
     }
+    private void OnEnable()
+    {
+        health.OnDie += MonsterDie;
+    }
 
+    private void OnDisable()
+    {
+        health.OnDie -= MonsterDie;
+    }
     public void Init(Transform[] transforms)
     {
         health.Init(data.maxHP);
         movement.Init(data.moveSpeed, transforms);
+    }
+    private void MonsterDie()
+    {
+        PlayerStatsManager.Instance.AddGold(data.reward);
     }
 
     public void ApplySlow(float percent, float duration)

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class StunAreaAttackModule : MonoBehaviour, IAttackModule
 {
-    [Header("Stun Settings")]
-    public float[] stunDuration = {0.1f,0.2f,0.3f};
+    private float[] stunDuration = {0.1f,0.2f,0.3f};
 
     public string attackEffectKey;
     private TowerBase tower;

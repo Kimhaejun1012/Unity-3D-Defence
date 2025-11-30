@@ -33,8 +33,8 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        UpdateGoldUI(PlayerStatsManager.Instance.gold);
-        UpdateHPUI(PlayerStatsManager.Instance.currentHP);
+        UpdateGoldUI();
+        UpdateHPUI();
     }
 
     private void Update()
@@ -101,12 +101,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateGoldUI(int gold)
+    public void UpdateGoldUI()
     {
         goldText.text = $"Gold: {PlayerStatsManager.Instance.gold}";
     }
 
-    public void UpdateHPUI(int hp)
+    public void UpdateHPUI()
     {
         hpText.text = $"Life: {PlayerStatsManager.Instance.currentHP}";
     }

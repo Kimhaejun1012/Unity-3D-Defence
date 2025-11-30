@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class ProjectileBase : MonoBehaviour
 {
     private Monster target;
+    private Transform targetPoint;
     private float speed;
 
     protected int damage;
@@ -17,6 +18,8 @@ public abstract class ProjectileBase : MonoBehaviour
 
         this.damage = damage;
         this.level = level;
+
+        targetPoint = target.targetPoint;
     }
 
     protected virtual void Update()
@@ -29,7 +32,7 @@ public abstract class ProjectileBase : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(
             transform.position,
-            target.transform.position,
+            targetPoint.position,
             speed * Time.deltaTime
         );
     }

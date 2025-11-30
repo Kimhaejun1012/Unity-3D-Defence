@@ -43,7 +43,7 @@ public class MonsterMovement : MonoBehaviour
     }
     private void Move()
     {
-        if (waypoints == null || index >= waypoints.Length) return;
+        if (waypoints == null || index >= waypoints.Length || GetComponent<MonsterHealth>().isDie) return;
 
         Vector3 target = waypoints[index].position;
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
@@ -72,7 +72,6 @@ public class MonsterMovement : MonoBehaviour
 
     private IEnumerator StunRoutine(float t)
     {
-
         speed = 0f;
         GetComponent<Animator>().speed = 0f;
 

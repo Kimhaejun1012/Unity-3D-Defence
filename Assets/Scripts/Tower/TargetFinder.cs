@@ -13,7 +13,9 @@ public static class TargetFinder
         foreach (var hit in hits)
         {
             Monster m = hit.GetComponent<Monster>();
+            MonsterHealth mH = m.GetComponent<MonsterHealth>();
             if (m == null) continue;
+            if (mH.isDie) continue;
 
             float dist = Vector3.Distance(origin, m.transform.position);
 
@@ -23,7 +25,6 @@ public static class TargetFinder
                 nearest = m;
             }
         }
-
         return nearest;
     }
 }

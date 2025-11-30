@@ -13,7 +13,7 @@ public class SplashProjectile : ProjectileBase
     protected override void OnHit(Monster target)
     {
         ObjectPoolManager.Instance.Spawn(key, transform.position, Quaternion.identity);
-        Collider[] hits = Physics.OverlapSphere(target.transform.position, splashRadius[level], monsterMask);
+        Collider[] hits = Physics.OverlapSphere(transform.position, splashRadius[level], monsterMask);
 
         foreach (var h in hits)
         {

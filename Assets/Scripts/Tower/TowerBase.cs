@@ -59,7 +59,7 @@ public class TowerBase : MonoBehaviour
     }
     public void LevelUp()
     {
-        if(level < data.maxLevel - 1 && PlayerStatsManager.Instance.gold >= data.levelUpPrice[level])
+        if(level < data.maxLevel - 1 && PlayerStatsManager.Instance.CheckGold(data.levelUpPrice[level]))
         {
             PlayerStatsManager.Instance.SpendGold(data.levelUpPrice[level]);
             level++;

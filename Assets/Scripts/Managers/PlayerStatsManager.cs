@@ -16,7 +16,7 @@ public class PlayerStatsManager : MonoBehaviour
     public void AddGold(int amount)
     {
         gold += amount;
-        UIManager.Instance.UpdateGoldUI(gold);
+        UIManager.Instance.UpdateGoldUI();
     }
 
     public bool SpendGold(int amount)
@@ -24,7 +24,7 @@ public class PlayerStatsManager : MonoBehaviour
         if (gold >= amount)
         {
             gold -= amount;
-            UIManager.Instance.UpdateGoldUI(gold);
+            UIManager.Instance.UpdateGoldUI();
             return true;
         }
         return false;
@@ -33,7 +33,7 @@ public class PlayerStatsManager : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHP -= amount;
-        UIManager.Instance.UpdateHPUI(currentHP);
+        UIManager.Instance.UpdateHPUI();
 
         if (currentHP <= 0)
         {

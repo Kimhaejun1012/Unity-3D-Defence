@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TowerBase : MonoBehaviour
 {
+    public GameObject[] auraObjects;
+
     public TowerData data;
     public int level = 0;
 
@@ -62,9 +64,16 @@ public class TowerBase : MonoBehaviour
         if(level < data.maxLevel - 1 && PlayerStatsManager.Instance.CheckGold(data.levelUpPrice[level]))
         {
             PlayerStatsManager.Instance.SpendGold(data.levelUpPrice[level]);
+            UpdateAura();
             level++;
             float scale = data.range[level] * 2f;
             rangeVisualizer.transform.localScale = new Vector3(scale, 0.01f, scale);
         }
     }
+    private void UpdateAura()
+    {
+        if (level < auraObjects.Length && auraObjects[level] != null)
+            auraObjects[level].SetActive(true);
+    }
+
 }

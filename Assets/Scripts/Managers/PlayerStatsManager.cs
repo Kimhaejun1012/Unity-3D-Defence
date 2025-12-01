@@ -37,6 +37,7 @@ public class PlayerStatsManager : MonoBehaviour
 
         if (currentHP <= 0)
         {
+            UIManager.Instance.ShowGameOver();
             GameManager.Instance.GameOver();
         }
     }

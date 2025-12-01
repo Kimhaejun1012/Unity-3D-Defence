@@ -60,6 +60,7 @@ public class MonsterMovement : MonoBehaviour
 
         if (index >= waypoints.Length)
         {
+            PlayerStatsManager.Instance.TakeDamage(1);
             GetComponent<PooledObject>().Return();
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,9 +13,22 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
     }
-
     public void GameOver()
     {
         Debug.Log("Game Over~!");
+    }
+    public void RetryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitToLobby()
+    {
+        SceneManager.LoadScene("LobbyScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

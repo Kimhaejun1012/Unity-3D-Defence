@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
     public GameObject[] starIcons;
     public TextMeshProUGUI[] statsText;
 
+    [Header("Tower Stats Panel")]
+    public GameObject failedPanel;
+    public TextMeshProUGUI waveText;
+
     public TextMeshProUGUI levelUpText;
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI hpText;
@@ -100,7 +104,15 @@ public class UIManager : MonoBehaviour
             starIcons[i].SetActive(false);
         }
     }
+    public void ShowGameOver()
+    {
+        failedPanel.SetActive(true);
+    }
 
+    public void HideGameOver()
+    {
+        failedPanel.SetActive(false);
+    }
     public void UpdateGoldUI()
     {
         goldText.text = $"Gold: {PlayerStatsManager.Instance.gold}";

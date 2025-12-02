@@ -12,6 +12,8 @@ public class SplashProjectile : ProjectileBase
 
     protected override void OnHit(Monster target)
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.sfxDB.splashHit);
+
         ObjectPoolManager.Instance.Spawn(key, transform.position, Quaternion.identity);
         Collider[] hits = Physics.OverlapSphere(transform.position, splashRadius[level], monsterMask);
 

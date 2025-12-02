@@ -12,6 +12,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
     }
     public void AddGold(int amount)
     {

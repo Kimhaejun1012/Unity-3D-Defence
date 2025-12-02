@@ -16,6 +16,7 @@ public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
 
     public void Execute(Monster ignored)
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.sfxDB.slowSFX);
         ObjectPoolManager.Instance.Spawn(
             attackEffectKey,
             transform.position,

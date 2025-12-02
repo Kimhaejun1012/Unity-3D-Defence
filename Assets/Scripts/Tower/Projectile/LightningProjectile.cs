@@ -24,6 +24,8 @@ public class LightningProjectile : ProjectileBase
     private void ChainDamage(Monster startTarget)
     {
         Monster current = startTarget;
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.sfxDB.lightningHit);
+
 
         for (int i = 0; i < chainCount[level]; i++)
         {
@@ -33,7 +35,7 @@ public class LightningProjectile : ProjectileBase
             {
                 hitTargets.Add(current);
                 current.GetComponent<MonsterHealth>().TakeDamage(damage);
-                ObjectPoolManager.Instance.Spawn(key, current.transform.position, Quaternion.identity);
+                ObjectPoolManager.Instance.Spawn(key, current.targetPoint.position, Quaternion.identity);
             }
             current = FindNextTarget(current);
         }

@@ -20,7 +20,7 @@ MonoBehaviour:
   - 2
   - 3
   attackSpeed:
-  - 3
-  - 2
   - 1
+  - 2
+  - 3
   baseDamage: 010000000200000003000000

@@ -16,6 +16,8 @@ public class StunAreaAttackModule : MonoBehaviour, IAttackModule
 
     public void Execute(Monster target)
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.sfxDB.stunSFX);
+
         ObjectPoolManager.Instance.Spawn(
             attackEffectKey,
             transform.position,

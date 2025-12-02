@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class TowerAnimation : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class TowerAnimation : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         tower = GetComponent<TowerBase>();
+    }
+    private void Start()
+    {
+        anim.SetFloat("FireFloat", 1f * tower.data.attackSpeed[tower.level]);
     }
 
     private void OnEnable()

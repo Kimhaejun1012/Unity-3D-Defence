@@ -19,9 +19,16 @@ public class UIManager : MonoBehaviour
     public GameObject[] starIcons;
     public TextMeshProUGUI[] statsText;
 
-    [Header("Tower Stats Panel")]
+    [Header("Tower Failed Panel")]
     public GameObject failedPanel;
     public TextMeshProUGUI waveText;
+
+    [Header("Setting Panel")]
+    public GameObject optionPanel;
+    public GameObject lobbyButtons;
+
+    [Header("Pause Panel")]
+    public GameObject pausePanel;
 
     public TextMeshProUGUI levelUpText;
     public TextMeshProUGUI goldText;
@@ -35,7 +42,7 @@ public class UIManager : MonoBehaviour
 
         Localization.LoadLanguage("en");
     }
-    private void Start()
+    public void GameSceneInit()
     {
         UpdateGoldUI();
         UpdateHPUI();
@@ -108,10 +115,27 @@ public class UIManager : MonoBehaviour
     {
         failedPanel.SetActive(true);
     }
-
     public void HideGameOver()
     {
         failedPanel.SetActive(false);
+    }
+    public void ShowPausePanel()
+    {
+        pausePanel.SetActive(true);
+    }
+    public void ShowOptionPanel()
+    {
+        lobbyButtons.SetActive(false);
+        optionPanel.SetActive(true);
+    }
+    public void HideOptionPanel()
+    {
+        lobbyButtons.SetActive(true);
+        optionPanel.SetActive(false);
+    }
+    public void HidePausePanel()
+    {
+        pausePanel.SetActive(false);
     }
     public void UpdateGoldUI()
     {

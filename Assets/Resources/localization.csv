@@ -26,3 +26,16 @@ SplashTower_2,스플래쉬 범위 4,Splash Range 4
 SplashTower_3,스플래쉬 범위 5,Splash Range 5
 LevelUp,레벨업,LevelUp
 MaxLevel,최대레벨,MaxLevel
+Start,시작,START
+Option,옵션,OPTION
+Exit,종료,EXIT
+Language,언어,LANGUAGE
+Korean,한국어,KOREAN
+English,영어,ENGLISH
+Life,목숨,LIFE
+Gold,돈,GOLD
+Restart,재시도,RESTART
+Pause,정지,PAUSE
+Defeat,패배,DEFEAT
+Resume,재개,RESUEM
+Lobby,로비,LOBBY

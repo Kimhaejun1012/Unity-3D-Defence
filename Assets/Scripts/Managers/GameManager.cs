@@ -12,33 +12,26 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(this);
+
+        SaveManager.Load();
+        Localization.LoadLanguage(SaveManager.data.language);
     }
     public void GameOver()
     {
         Debug.Log("Game Over~!");
     }
-    public void RetryGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        UIManager.Instance.ShowPausePanel();
     }
     public void ResumeGame()
     {
         Time.timeScale = 1f;
-        UIManager.Instance.HidePausePanel();
     }
-    public void ExitToLobby()
-    {
-        SceneManager.LoadScene("LobbyScene");
-    }
+
     public void LoadLobby()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Lobby");
     }
     public void LoadGame()
     {
@@ -47,9 +40,12 @@ public class GameManager : MonoBehaviour
     public void SetGameSpeed(float speed)
     {
         Time.timeScale = speed;
-        UIManager.Instance.HidePausePanel();
     }
-    public void QuitGame()
+    public void SetLangauge(string lang)
+    {
+        Localization.SetLanguage(lang);
+    }
+    public void ExitGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

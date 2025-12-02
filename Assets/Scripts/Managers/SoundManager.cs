@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
@@ -15,11 +16,12 @@ public class SoundManager : MonoBehaviour
     public AudioSource[] sfxSources;
     public SFXData sfxDB;
     public BGMData bgmDB;
-    private int sfxIndex = 0;
 
-    public float masterVolume = 1f;
-    public float bgmVolume = 1f;
-    public float sfxVolume = 1f;
+    public Slider masterSlider;
+    public Slider bgmSlider;
+    public Slider sfxSlider;
+
+    private int sfxIndex = 0;
 
     private void Awake()
     {
@@ -28,8 +30,12 @@ public class SoundManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+    }
+    private void Start()
+    {
         ApplyVolumes();
     }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -65,21 +71,22 @@ public class SoundManager : MonoBehaviour
     }
     public void SetMasterVolume(float value)
     {
-        masterVolume = value;
         mixer.SetFloat("Master", LinearToDecibel(value));
+        SaveManager.data.masterVolume = value;
     }
 
     public void SetBGMVolume(float value)
     {
-        bgmVolume = value;
         mixer.SetFloat("BGM", LinearToDecibel(value));
+        SaveManager.data.bgmVolume = value;
     }
 
     public void SetSFXVolume(float value)
     {
-        sfxVolume = value;
         mixer.SetFloat("SFX", LinearToDecibel(value));
+        SaveManager.data.sfxVolume = value;
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         switch (scene.name)
@@ -95,9 +102,13 @@ public class SoundManager : MonoBehaviour
     }
     private void ApplyVolumes()
     {
-        SetMasterVolume(masterVolume);
-        SetBGMVolume(bgmVolume);
-        SetSFXVolume(sfxVolume);
+        SetMasterVolume(SaveManager.data.masterVolume);
+        SetBGMVolume(SaveManager.data.bgmVolume);
+        SetSFXVolume(SaveManager.data.sfxVolume);
+
+        masterSlider.value = SaveManager.data.masterVolume;
+        bgmSlider.value = SaveManager.data.bgmVolume;
+        sfxSlider.value = SaveManager.data.sfxVolume;
     }
 
     private float LinearToDecibel(float linear)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -20,7 +21,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] statsText;
 
     [Header("Tower Failed Panel")]
-    public GameObject failedPanel;
+    public GameObject defeatPanel;
     public TextMeshProUGUI waveText;
 
     [Header("Setting Panel")]
@@ -34,18 +35,25 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI hpText;
 
-
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        Localization.LoadLanguage("en");
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void GameSceneInit()
     {
         UpdateGoldUI();
         UpdateHPUI();
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Game")
+        {
+            if (UIManager.Instance != null)
+                UIManager.Instance.GameSceneInit();
+        }
     }
 
     private void Update()
@@ -88,7 +96,7 @@ public class UIManager : MonoBehaviour
         {
             levelUpText.text = $"{Localization.Get("LevelUp")} : {data.levelUpPrice[level]}";
         }
-        else if(level == data.maxLevel - 1)
+        else if (level == data.maxLevel - 1)
         {
             levelUpText.text = Localization.Get("MaxLevel");
         }
@@ -113,11 +121,11 @@ public class UIManager : MonoBehaviour
     }
     public void ShowGameOver()
     {
-        failedPanel.SetActive(true);
+        defeatPanel.SetActive(true);
     }
     public void HideGameOver()
     {
-        failedPanel.SetActive(false);
+        defeatPanel.SetActive(false);
     }
     public void ShowPausePanel()
     {
@@ -132,6 +140,7 @@ public class UIManager : MonoBehaviour
     {
         lobbyButtons.SetActive(true);
         optionPanel.SetActive(false);
+        SaveManager.Save();
     }
     public void HidePausePanel()
     {
@@ -139,12 +148,43 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateGoldUI()
     {
-        goldText.text = $"Gold: {PlayerStatsManager.Instance.gold}";
+        goldText.text = $"{Localization.Get("Gold")}: {PlayerStatsManager.Instance.gold}";
     }
-
+    public void PauseGame()
+    {
+        GameManager.Instance.PauseGame();
+        ShowPausePanel();
+    }
+    public void SetGameSpeed(float speed)
+    {
+        GameManager.Instance.SetGameSpeed(speed);
+        HidePausePanel();
+    }
+    public void ResumeGame()
+    {
+        GameManager.Instance.ResumeGame();
+        HidePausePanel();
+    }
+    public void StartGame()
+    {
+        GameManager.Instance.LoadGame();
+    }
+    public void ExitGame()
+    {
+        GameManager.Instance.ExitGame();
+    }
+    public void ExitToLobby()
+    {
+        GameManager.Instance.LoadLobby();
+        SceneManager.LoadScene("Lobby");
+    }
+    public void ReTryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public void UpdateHPUI()
     {
-        hpText.text = $"Life: {PlayerStatsManager.Instance.currentHP}";
+        hpText.text = $"{Localization.Get("Life")}: {PlayerStatsManager.Instance.currentHP}";
     }
     public void OnClickLevelUp()
     {

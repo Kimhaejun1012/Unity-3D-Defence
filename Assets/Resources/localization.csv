@@ -34,8 +34,9 @@ Korean,한국어,KOREAN
 English,영어,ENGLISH
 Life,목숨,LIFE
 Gold,돈,GOLD
-Restart,재시도,RESTART
+Retry,재시도,RETRY
 Pause,정지,PAUSE
 Defeat,패배,DEFEAT
 Resume,재개,RESUEM
 Lobby,로비,LOBBY
+Clear,승리,CLEAR

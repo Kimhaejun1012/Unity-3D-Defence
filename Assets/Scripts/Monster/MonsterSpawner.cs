@@ -6,7 +6,7 @@ public class MonsterSpawner : MonoBehaviour
 {
     public string monsterKey;
     public Vector3 spawnPosition;
-
+    public int activeMonsterCount;
     private void Start()
     {
         spawnPosition = WayPointManager.Instance.waypoints[0].position;
@@ -26,7 +26,13 @@ public class MonsterSpawner : MonoBehaviour
     {
         var obj = ObjectPoolManager.Instance.Spawn(key, spawnPosition, Quaternion.identity);
         var monster = obj.GetComponent<Monster>();
-
+        var monsterHealth = monster.GetComponent<MonsterHealth>();
+        monsterHealth.OnDie += OnMonsterDeath;
         monster.Init(WayPointManager.Instance.waypoints);
+        activeMonsterCount++;
+    }
+    private void OnMonsterDeath()
+    {
+        activeMonsterCount--;
     }
 }

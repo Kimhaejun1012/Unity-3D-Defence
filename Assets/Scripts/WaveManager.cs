@@ -37,6 +37,7 @@ public class WaveManager : MonoBehaviour
 
         if (currentWaveIndex >= groupedWaves.Count)
         {
+            StartCoroutine(WaitForAllMonstersAndClear());
             return;
         }
 
@@ -70,4 +71,19 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenWaves);
         StartNextWave();
     }
+    private IEnumerator WaitForAllMonstersAndClear()
+    {
+        while (spawner.activeMonsterCount > 0)
+        {
+            yield return null;
+        }
+
+        UIManager.Instance.ShowClearPanel();
+
+        int nextStage = StageManager.selectedStage + 1;
+        SaveManager.data.unlockedStage =
+            Mathf.Max(SaveManager.data.unlockedStage, nextStage);
+        SaveManager.Save();
+    }
+
 }

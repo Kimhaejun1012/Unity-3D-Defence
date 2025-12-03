@@ -10,6 +10,6 @@ public class StageButton : MonoBehaviour
     public void OnStageClicked()
     {
         StageManager.SelectStage(stageNumber);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Loding");
     }
 }

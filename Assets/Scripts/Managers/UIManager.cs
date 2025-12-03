@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
     public GameObject defeatPanel;
     public TextMeshProUGUI defeatWaveText;
 
+    [Header("Tower Clear Panel")]
+    public GameObject claerPanel;
+
     public TextMeshProUGUI waveText;
 
     [Header("Setting Panel")]
@@ -57,38 +60,9 @@ public class UIManager : MonoBehaviour
     {
         if (scene.name == "Game")
         {
-            if (UIManager.Instance != null)
-                UIManager.Instance.GameSceneInit();
+            if (Instance != null)
+                Instance.GameSceneInit();
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Debug.Log(Localization.Get("Damage"));
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log(Localization.Get("TOWER_ICE_NAME"));
-        }
-    }
-
-    public void ShowTowerInfo(string towerKey)
-    {
-        towerInfoPanel.SetActive(true);
-
-        towerNameText.text = Localization.Get($"{towerKey}_NAME");
-        towerDescriptionText.text = Localization.Get($"{towerKey}_DESC");
-    }
-    public void HideTowerInfo()
-    {
-        towerInfoPanel.SetActive(false);
-    }
-    public void ShowTowerStatsInfo(string towerKey, TowerData data, int level)
-    {
-        towerStatsPanel.SetActive(true);
-        RefreshStatsInfo(towerKey, data, level);
     }
 
     public void RefreshStatsInfo(string towerKey, TowerData data, int level)
@@ -117,32 +91,45 @@ public class UIManager : MonoBehaviour
 
         statsText[3].text = ability ?? "";
     }
-    public void HideTowerStatsInfo()
-    {
-        towerStatsPanel.SetActive(false);
-
-        for (int i = 0; i < starIcons.Length; i++)
-        {
-            starIcons[i].SetActive(false);
-        }
-    }
     public void ShowGameOver()
     {
         defeatPanel.SetActive(true);
     }
-    public void HideGameOver()
+    public void ShowTowerInfo(string towerKey)
     {
-        GameManager.Instance.PauseGame();
-        defeatPanel.SetActive(false);
+        towerInfoPanel.SetActive(true);
+
+        towerNameText.text = Localization.Get($"{towerKey}_NAME");
+        towerDescriptionText.text = Localization.Get($"{towerKey}_DESC");
+    }
+    public void ShowTowerStatsInfo(string towerKey, TowerData data, int level)
+    {
+        towerStatsPanel.SetActive(true);
+        RefreshStatsInfo(towerKey, data, level);
     }
     public void ShowPausePanel()
     {
         pausePanel.SetActive(true);
     }
+    public void ShowClearPanel()
+    {
+        GameManager.Instance.PauseGame();
+        claerPanel.SetActive(true);
+    }
     public void ShowOptionPanel()
     {
         lobbyButtons.SetActive(false);
         optionPanel.SetActive(true);
+    }
+    public void ShowStageSelect()
+    {
+        lobbyButtons.SetActive(false);
+        stageSelectPanel.SetActive(true);
+    }
+    public void HideGameOver()
+    {
+        defeatPanel.SetActive(false);
+        GameManager.Instance.PauseGame();
     }
     public void HideOptionPanel()
     {
@@ -154,21 +141,28 @@ public class UIManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
     }
-    public void PauseGame()
-    {
-        GameManager.Instance.PauseGame();
-        ShowPausePanel();
-    }
-    public void ShowStageSelect()
-    {
-        lobbyButtons.SetActive(false);
-        stageSelectPanel.SetActive(true);
-    }
-
     public void HideStageSelect()
     {
         stageSelectPanel.SetActive(false);
         lobbyButtons.SetActive(true);
+    }
+    public void HideTowerStatsInfo()
+    {
+        towerStatsPanel.SetActive(false);
+
+        for (int i = 0; i < starIcons.Length; i++)
+        {
+            starIcons[i].SetActive(false);
+        }
+    }
+    public void HideTowerInfo()
+    {
+        towerInfoPanel.SetActive(false);
+    }
+    public void PauseGame()
+    {
+        ShowPausePanel();
+        GameManager.Instance.PauseGame();
     }
     public void UpdateGoldUI()
     {
@@ -177,6 +171,10 @@ public class UIManager : MonoBehaviour
     public void UpdateWaveUI(int current, int total)
     {
         waveText.text = $"Wave {current} / {total}";
+    }
+    public void UpdateHPUI()
+    {
+        hpText.text = $"{Localization.Get("Life")}: {PlayerStatsManager.Instance.currentHP}";
     }
     public void SetGameSpeed(float speed)
     {
@@ -206,15 +204,10 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.ResumeGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void UpdateHPUI()
-    {
-        hpText.text = $"{Localization.Get("Life")}: {PlayerStatsManager.Instance.currentHP}";
-    }
     public void OnClickLevelUp()
     {
         TowerManager.Instance.CurrentTower.LevelUp();
         TowerBase currentTower = TowerManager.Instance.CurrentTower;
-
         RefreshStatsInfo(currentTower.data.key, currentTower.data, currentTower.level);
     }
 }

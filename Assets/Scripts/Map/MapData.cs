@@ -39,5 +39,4 @@ public class MapData : ScriptableObject
 
         return cells[localY * width + localX];
     }
-
 }

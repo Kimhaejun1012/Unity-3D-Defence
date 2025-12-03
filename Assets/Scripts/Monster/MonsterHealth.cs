@@ -34,5 +34,7 @@ public class MonsterHealth : MonoBehaviour, IDamageable
     {
         isDie = true;
         OnDie?.Invoke();
+
+        OnDie = null;
     }
 }

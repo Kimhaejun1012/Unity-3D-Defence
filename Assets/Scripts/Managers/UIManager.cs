@@ -203,6 +203,7 @@ public class UIManager : MonoBehaviour
     }
     public void ReTryGame()
     {
+        GameManager.Instance.ResumeGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void UpdateHPUI()

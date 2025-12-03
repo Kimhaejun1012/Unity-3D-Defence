@@ -32,7 +32,6 @@ public static class CSVLoader
 
             dict[key] = value;
         }
-
         return dict;
     }
 }

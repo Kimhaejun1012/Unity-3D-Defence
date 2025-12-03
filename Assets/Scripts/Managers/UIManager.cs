@@ -94,6 +94,7 @@ public class UIManager : MonoBehaviour
     public void ShowGameOver()
     {
         defeatPanel.SetActive(true);
+        defeatWaveText.text = waveText.text;
     }
     public void ShowTowerInfo(string towerKey)
     {

@@ -9,8 +9,9 @@ public class TowerPlacer : MonoBehaviour
     public Tilemap tilemap;
     public Grid grid;
 
-    public MapData originalMapData;
+    public MapData[] originalMapDatas;
     private MapData mapData;
+
     [System.Serializable]
     public class TowerInfo
     {
@@ -33,7 +34,7 @@ public class TowerPlacer : MonoBehaviour
 
     void Awake()
     {
-        mapData = Instantiate(originalMapData);
+        mapData = Instantiate(originalMapDatas[StageManager.selectedStage]);
 
         if (grid == null && tilemap != null)
             grid = tilemap.layoutGrid;

@@ -6,7 +6,7 @@ public class WayPointManager : MonoBehaviour
 {
     public static WayPointManager Instance;
 
-    public Transform waypointParent;
+    public Transform[] waypointParent;
 
     [HideInInspector]
     public Transform[] waypoints;
@@ -26,12 +26,12 @@ public class WayPointManager : MonoBehaviour
             return;
         }
 
-        int count = waypointParent.childCount;
+        int count = waypointParent[StageManager.selectedStage].childCount;
         waypoints = new Transform[count];
 
         for (int i = 0; i < count; i++)
         {
-            waypoints[i] = waypointParent.GetChild(i);
+            waypoints[i] = waypointParent[StageManager.selectedStage].GetChild(i);
         }
     }
 }

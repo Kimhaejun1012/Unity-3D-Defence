@@ -31,9 +31,11 @@ public class UIManager : MonoBehaviour
     public GameObject optionPanel;
     public GameObject lobbyButtons;
 
-
     [Header("Pause Panel")]
     public GameObject pausePanel;
+
+    [Header("StageSelect Panel")]
+    public GameObject stageSelectPanel;
 
     public TextMeshProUGUI levelUpText;
     public TextMeshProUGUI goldText;
@@ -156,6 +158,17 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.PauseGame();
         ShowPausePanel();
+    }
+    public void ShowStageSelect()
+    {
+        lobbyButtons.SetActive(false);
+        stageSelectPanel.SetActive(true);
+    }
+
+    public void HideStageSelect()
+    {
+        stageSelectPanel.SetActive(false);
+        lobbyButtons.SetActive(true);
     }
     public void UpdateGoldUI()
     {

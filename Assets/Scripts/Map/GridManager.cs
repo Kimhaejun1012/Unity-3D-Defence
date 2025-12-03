@@ -4,7 +4,16 @@ public class GridManager : MonoBehaviour
 {
     public Tilemap tilemap;
     public MapData mapData;
+    public GameObject[] grides;
 
+    public void Start()
+    {
+        foreach(var gride in grides)
+        {
+            gride.SetActive(false);
+        }
+        grides[StageManager.selectedStage].SetActive(true);
+    }
     public void BakeToMapData()
     {
         if (mapData == null)
@@ -45,10 +54,7 @@ public class GridManager : MonoBehaviour
                 else type = CellType.Empty;
 
                 mapData.SetCell(x, y, type);
-
-                //Debug.Log($"{x}, {y} -> {type}");
             }
         }
-        //Debug.Log($"Bake Good: {width} x {height}");
     }
 }

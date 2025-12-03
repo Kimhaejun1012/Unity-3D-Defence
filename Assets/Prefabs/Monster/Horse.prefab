@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 4118375421551981374}
   - component: {fileID: 6710141831932160626}
   - component: {fileID: 4480579304802821147}
-  m_Layer: 20
+  m_Layer: 6
   m_Name: Horse
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -1690,7 +1690,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: c4dd5f3035528e34d862006d1a960add, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

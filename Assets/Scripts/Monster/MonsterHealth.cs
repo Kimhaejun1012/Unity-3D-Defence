@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour, IDamageable
@@ -16,6 +17,7 @@ public class MonsterHealth : MonoBehaviour, IDamageable
     {
         maxHP = hp;
         currentHP = hp;
+        isDie = false;
     }
     public void TakeDamage(int damage)
     {

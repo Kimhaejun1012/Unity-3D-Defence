@@ -21,7 +21,7 @@ public class SplashProjectile : ProjectileBase
         {
             Monster m = h.GetComponent<Monster>();
             if (m != null)
-                m.GetComponent<MonsterHealth>().TakeDamage(damage);
+                m.GetComponent<IDamageable>().TakeDamage(damage);
         }
     }
 

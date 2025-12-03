@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StunAreaAttackModule : MonoBehaviour, IAttackModule
 {
-    private float[] stunDuration = {0.1f,0.2f,0.3f};
+    private float[] stunDuration = { 0.1f, 0.2f, 0.3f };
 
     public string attackEffectKey;
     private TowerBase tower;
@@ -34,8 +34,11 @@ public class StunAreaAttackModule : MonoBehaviour, IAttackModule
         {
             Monster m = col.GetComponent<Monster>();
             if (m == null) continue;
+            {
+                m.ApplyStun(stunDuration[tower.level]);
+                m.GetComponent<IDamageable>().TakeDamage(tower.data.baseDamage[tower.level]);
 
-            m.ApplyStun(stunDuration[tower.level]);
+            }
         }
     }
 }

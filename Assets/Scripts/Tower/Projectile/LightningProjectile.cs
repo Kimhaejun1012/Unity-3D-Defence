@@ -34,7 +34,7 @@ public class LightningProjectile : ProjectileBase
             if (!hitTargets.Contains(current))
             {
                 hitTargets.Add(current);
-                current.GetComponent<MonsterHealth>().TakeDamage(damage);
+                current.GetComponent<IDamageable>().TakeDamage(damage);
                 ObjectPoolManager.Instance.Spawn(key, current.targetPoint.position, Quaternion.identity);
             }
             current = FindNextTarget(current);

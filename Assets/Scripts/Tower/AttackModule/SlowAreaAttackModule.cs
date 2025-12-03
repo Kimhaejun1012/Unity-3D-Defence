@@ -27,10 +27,11 @@ public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
         foreach (var hit in hits)
         {
             Monster m = hit.GetComponent<Monster>();
-            Debug.Log(slowPercent[tower.level]);
-            Debug.Log(duration[tower.level]);
             if (m == null) continue;
-            m.ApplySlow(slowPercent[tower.level], duration[tower.level]);
+            {
+                m.ApplySlow(slowPercent[tower.level], duration[tower.level]);
+                m.GetComponent<IDamageable>().TakeDamage(tower.data.baseDamage[tower.level]);
+            }
         }
     }
 }

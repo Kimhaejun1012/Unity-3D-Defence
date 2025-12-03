@@ -15,11 +15,13 @@ public class TowerBase : MonoBehaviour
     
     private float attackTimer = 0f;
     private IAttackModule[] attackModules;
+    private TowerAnimation towerAnim;
     Monster target;
 
     private void Awake()
     {
         attackModules = GetComponents<IAttackModule>();
+        towerAnim = GetComponent<TowerAnimation>();
 
         rangeVisualizer.SetActive(false);
         float scale = data.range[level] * 2f;
@@ -68,6 +70,7 @@ public class TowerBase : MonoBehaviour
             level++;
             float scale = data.range[level] * 2f;
             rangeVisualizer.transform.localScale = new Vector3(scale, 0.01f, scale);
+            towerAnim.SetAttackAnimationClipSpeed();
         }
     }
     private void UpdateAura()

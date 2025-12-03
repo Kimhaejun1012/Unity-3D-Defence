@@ -10,11 +10,13 @@ public class Monster : MonoBehaviour
 
     private MonsterMovement movement;
     private MonsterHealth health;
+    private MonsterUI monsterUI;
 
     void Awake()
     {
         movement = GetComponent<MonsterMovement>();
         health = GetComponent<MonsterHealth>();
+        monsterUI = GetComponentInChildren<MonsterUI>();
     }
     private void OnEnable()
     {
@@ -29,6 +31,7 @@ public class Monster : MonoBehaviour
     {
         health.Init(data.maxHP);
         movement.Init(data.moveSpeed, transforms);
+        monsterUI.Init();
     }
     private void MonsterDie()
     {

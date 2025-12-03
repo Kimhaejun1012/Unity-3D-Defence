@@ -33,6 +33,14 @@ public class MonsterUI : MonoBehaviour
         health.OnDie += HideUI;
     }
 
+    public void Init()
+    {
+        gameObject.SetActive(true);
+        statusIcons["Slow"].SetActive(false);
+        statusIcons["Stun"].SetActive(false);
+        UpdateHealthBar(1f);
+    }
+
     private void LateUpdate()
     {
         transform.LookAt(transform.position + cam.transform.forward);

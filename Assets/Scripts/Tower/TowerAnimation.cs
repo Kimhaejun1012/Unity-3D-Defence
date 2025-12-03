@@ -17,6 +17,10 @@ public class TowerAnimation : MonoBehaviour
     {
         anim.SetFloat("FireFloat", 1f * tower.data.attackSpeed[tower.level]);
     }
+    public void SetAttackAnimationClipSpeed()
+    {
+        anim.SetFloat("FireFloat", 1f * tower.data.attackSpeed[tower.level]);
+    }
 
     private void OnEnable()
     {

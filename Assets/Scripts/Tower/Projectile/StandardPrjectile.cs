@@ -9,7 +9,7 @@ public class StandardPrjectile : ProjectileBase
     {
         SoundManager.Instance.PlaySFX(SoundManager.Instance.sfxDB.standardHit);
 
-        monster.GetComponent<MonsterHealth>().TakeDamage(damage);
+        monster.GetComponent<IDamageable>().TakeDamage(damage);
         ObjectPoolManager.Instance.Spawn(key, transform.position, Quaternion.identity);
     }
 }

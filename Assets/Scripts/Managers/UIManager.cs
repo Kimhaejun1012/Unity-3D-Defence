@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [Header("Tower Stats Panel")]
     public GameObject towerStatsPanel;
     public GameObject[] starIcons;
+    public TextMeshProUGUI towerStatsTitleText;
     public TextMeshProUGUI[] statsText;
 
     [Header("Tower Failed Panel")]
@@ -101,6 +102,7 @@ public class UIManager : MonoBehaviour
             levelUpText.text = Localization.Get("MaxLevel");
         }
 
+        towerStatsTitleText.text = $"{Localization.Get($"{towerKey}_NAME")}";
         statsText[0].text = $"{Localization.Get("Damage")} : {data.baseDamage[level]}";
         statsText[1].text = $"{Localization.Get("Range")} : {data.range[level]}";
         statsText[2].text = $"{Localization.Get("AttackSpeed")} : {data.attackSpeed[level]}";
@@ -125,6 +127,7 @@ public class UIManager : MonoBehaviour
     }
     public void HideGameOver()
     {
+        GameManager.Instance.PauseGame();
         defeatPanel.SetActive(false);
     }
     public void ShowPausePanel()
@@ -175,7 +178,7 @@ public class UIManager : MonoBehaviour
     }
     public void ExitToLobby()
     {
-        GameManager.Instance.LoadLobby();
+        GameManager.Instance.ResumeGame();
         SceneManager.LoadScene("Lobby");
     }
     public void ReTryGame()

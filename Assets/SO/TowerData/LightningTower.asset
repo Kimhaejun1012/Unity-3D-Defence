@@ -16,9 +16,9 @@ MonoBehaviour:
   maxLevel: 3
   levelUpPrice: 3200000064000000
   range:
-  - 1
-  - 2
   - 3
+  - 3
+  - 4
   attackSpeed:
   - 1
   - 2

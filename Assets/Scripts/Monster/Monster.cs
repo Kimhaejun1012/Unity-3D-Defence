@@ -12,11 +12,13 @@ public class Monster : MonoBehaviour
     private MonsterHealth health;
     private MonsterUI monsterUI;
 
+    private Collider col;
     void Awake()
     {
         movement = GetComponent<MonsterMovement>();
         health = GetComponent<MonsterHealth>();
         monsterUI = GetComponentInChildren<MonsterUI>();
+        col = GetComponent<Collider>();
     }
     private void OnEnable()
     {
@@ -32,10 +34,12 @@ public class Monster : MonoBehaviour
         health.Init(data.maxHP);
         movement.Init(data.moveSpeed, transforms);
         monsterUI.Init();
+        col.enabled = true;
     }
     private void MonsterDie()
     {
         PlayerStatsManager.Instance.AddGold(data.reward);
+        col.enabled = false;
     }
 
     public void ApplySlow(float percent, float duration)

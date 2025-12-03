@@ -21,13 +21,16 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI towerStatsTitleText;
     public TextMeshProUGUI[] statsText;
 
-    [Header("Tower Failed Panel")]
+    [Header("Tower Defeat Panel")]
     public GameObject defeatPanel;
+    public TextMeshProUGUI defeatWaveText;
+
     public TextMeshProUGUI waveText;
 
     [Header("Setting Panel")]
     public GameObject optionPanel;
     public GameObject lobbyButtons;
+
 
     [Header("Pause Panel")]
     public GameObject pausePanel;
@@ -149,14 +152,18 @@ public class UIManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
     }
-    public void UpdateGoldUI()
-    {
-        goldText.text = $"{Localization.Get("Gold")}: {PlayerStatsManager.Instance.gold}";
-    }
     public void PauseGame()
     {
         GameManager.Instance.PauseGame();
         ShowPausePanel();
+    }
+    public void UpdateGoldUI()
+    {
+        goldText.text = $"{Localization.Get("Gold")}: {PlayerStatsManager.Instance.gold}";
+    }
+    public void UpdateWaveUI(int current, int total)
+    {
+        waveText.text = $"Wave {current} / {total}";
     }
     public void SetGameSpeed(float speed)
     {

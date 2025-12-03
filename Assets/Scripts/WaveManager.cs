@@ -13,8 +13,6 @@ public class WaveManager : MonoBehaviour
     public bool isWaveRunning = false;
 
     public float timeBetweenWaves = 5f;
-
-
     void Start()
     {
         LoadWaves();
@@ -39,9 +37,13 @@ public class WaveManager : MonoBehaviour
 
         if (currentWaveIndex >= groupedWaves.Count)
         {
-            Debug.Log("¸ðµç Wave Á¾·áµÊ");
             return;
         }
+
+        UIManager.Instance.UpdateWaveUI(
+            currentWaveIndex + 1,
+            groupedWaves.Count
+        );
 
         StartCoroutine(RunWaveRoutine());
     }

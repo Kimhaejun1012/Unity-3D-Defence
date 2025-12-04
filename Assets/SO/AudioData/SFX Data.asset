@@ -15,5 +15,6 @@ MonoBehaviour:
   standardHit: {fileID: 8300000, guid: 598388730c0805543a8c8c42b368f33f, type: 3}
   splashHit: {fileID: 8300000, guid: e7a3775631b505b46830c58585f8bf3f, type: 3}
   lightningHit: {fileID: 8300000, guid: bd19611c7b796a64590dad0213ec04f4, type: 3}
+  bladeHit: {fileID: 8300000, guid: 3bc6c23b1557eb945b4564bf624bc917, type: 3}
   slowSFX: {fileID: 8300000, guid: 5625a15c5d86f3d4f957059b5bdde670, type: 3}
   stunSFX: {fileID: 8300000, guid: f3bbd14871cb4cd4b80ed85e7cd9a87a, type: 3}

@@ -294,7 +294,7 @@ MonoBehaviour:
   defeatPanel: {fileID: 0}
   defeatWaveText: {fileID: 0}
   claerPanel: {fileID: 0}
-  clearOffUI: []
+  gameEndDisableUI: []
   waveText: {fileID: 0}
   optionPanel: {fileID: 818918378}
   lobbyButtons: {fileID: 1676843740}
@@ -2923,7 +2923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6066730115521921676
 MonoBehaviour:
   m_ObjectHideFlags: 0

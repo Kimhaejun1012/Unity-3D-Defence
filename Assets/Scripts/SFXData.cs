@@ -8,6 +8,7 @@ public class SFXData : ScriptableObject
     public AudioClip standardHit;
     public AudioClip splashHit;
     public AudioClip lightningHit;
+    public AudioClip bladeHit;
     public AudioClip slowSFX;
     public AudioClip stunSFX;
 }

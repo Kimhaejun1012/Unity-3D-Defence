@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Tower Clear Panel")]
     public GameObject claerPanel;
-    public GameObject[] clearOffUI;
+    public GameObject[] gameEndDisableUI;
 
     public TextMeshProUGUI waveText;
 
@@ -96,6 +96,12 @@ public class UIManager : MonoBehaviour
     {
         defeatPanel.SetActive(true);
         defeatWaveText.text = waveText.text;
+        GameManager.Instance.PauseGame();
+        foreach(var offUI in gameEndDisableUI)
+        {
+            offUI.SetActive(false);
+        }
+
     }
     public void ShowTowerInfo(string towerKey)
     {
@@ -118,7 +124,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.PauseGame();
         claerPanel.SetActive(true);
 
-        foreach(var offUI in clearOffUI)
+        foreach(var offUI in gameEndDisableUI)
         {
             offUI.SetActive(false);
         }

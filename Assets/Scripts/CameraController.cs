@@ -18,9 +18,9 @@ public class CameraController : MonoBehaviour
     private float pitch = 30f;
 
     private Camera cam;
-    public float zoomSpeed = 40f;
-    public float minFOV = 20f;
-    public float maxFOV = 60f;
+    private float zoomSpeed = 40f;
+    private float minFOV = 20f;
+    private float maxFOV = 70f;
 
     void Start()
     {

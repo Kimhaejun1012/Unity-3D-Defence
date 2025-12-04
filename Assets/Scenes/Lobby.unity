@@ -294,6 +294,7 @@ MonoBehaviour:
   defeatPanel: {fileID: 0}
   defeatWaveText: {fileID: 0}
   claerPanel: {fileID: 0}
+  clearOffUI: []
   waveText: {fileID: 0}
   optionPanel: {fileID: 818918378}
   lobbyButtons: {fileID: 1676843740}
@@ -2542,7 +2543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f3be25d696bc848a3a48724695145f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Option
+  key: Stage
 --- !u!114 &2350103741112673097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,7 +2844,7 @@ GameObject:
   - component: {fileID: 997315901017366198}
   - component: {fileID: 2077054435063188551}
   m_Layer: 5
-  m_Name: StageText
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2922,7 +2923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &6066730115521921676
 MonoBehaviour:
   m_ObjectHideFlags: 0

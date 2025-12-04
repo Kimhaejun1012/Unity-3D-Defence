@@ -30,12 +30,12 @@ public class MonsterUI : MonoBehaviour
         };
 
         health.OnHealthChanged += UpdateHealthBar;
-        health.OnDie += HideUI;
     }
 
     public void Init()
     {
         gameObject.SetActive(true);
+        health.OnDie += HideUI;
         statusIcons["Slow"].SetActive(false);
         statusIcons["Stun"].SetActive(false);
         UpdateHealthBar(1f);

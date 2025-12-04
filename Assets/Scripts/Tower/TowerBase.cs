@@ -58,7 +58,6 @@ public class TowerBase : MonoBehaviour
 
         if (attackTimer >= 1f / data.attackSpeed[level] && target != null)
         {
-            Debug.Log(target.name);
             AnimationTrigger();
             attackTimer = 0f;
         }

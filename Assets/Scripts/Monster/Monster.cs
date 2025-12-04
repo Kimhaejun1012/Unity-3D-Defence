@@ -12,6 +12,7 @@ public class Monster : MonoBehaviour
     private MonsterHealth health;
     private MonsterUI monsterUI;
 
+    public MonsterHealth MonsterHealth => health;
     private Collider col;
     void Awake()
     {

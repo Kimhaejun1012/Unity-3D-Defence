@@ -24,7 +24,7 @@ public abstract class ProjectileBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (target == null)
+        if (target.MonsterHealth.isDie)
         {
             GetComponent<PooledObject>().Return();
             return;

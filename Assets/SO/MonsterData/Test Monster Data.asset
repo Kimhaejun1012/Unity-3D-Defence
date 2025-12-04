@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Test Monster Data
   m_EditorClassIdentifier: 
   monsterName: TestMonster
-  maxHP: 1
+  maxHP: 10
   moveSpeed: 3
   reward: 10

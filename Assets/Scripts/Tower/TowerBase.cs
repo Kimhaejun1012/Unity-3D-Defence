@@ -32,7 +32,22 @@ public class TowerBase : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        target = TargetFinder.GetNearestEnemy(transform.position, data.range[level]);
+        if (target != null)
+        {
+            MonsterHealth mh = target.GetComponent<MonsterHealth>();
+
+            if (mh.isDie ||
+                Vector3.Distance(transform.position, target.transform.position) > data.range[level])
+            {
+                target = null;
+            }
+        }
+        if (target == null)
+        {
+            target = TargetFinder.GetNearestEnemy(transform.position, data.range[level]);
+        }
+
+        if (target == null) return;
 
         transform.LookAt(target?.transform);
         Vector3 rot = transform.rotation.eulerAngles;

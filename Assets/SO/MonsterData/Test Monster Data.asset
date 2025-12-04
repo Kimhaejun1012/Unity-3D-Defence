@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: TestMonster
   maxHP: 10
-  moveSpeed: 3
+  moveSpeed: 7
   reward: 10

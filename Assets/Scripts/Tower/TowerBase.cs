@@ -12,7 +12,8 @@ public class TowerBase : MonoBehaviour
 
     public event Action OnFire;
     public GameObject rangeVisualizer;
-    
+
+    private bool isAttacking = false;
     private float attackTimer = 0f;
     private IAttackModule[] attackModules;
     private TowerAnimation towerAnim;
@@ -31,6 +32,8 @@ public class TowerBase : MonoBehaviour
     private void Update()
     {
         attackTimer += Time.deltaTime;
+
+        if (isAttacking) return;
 
         if (target != null)
         {
@@ -55,6 +58,7 @@ public class TowerBase : MonoBehaviour
 
         if (attackTimer >= 1f / data.attackSpeed[level] && target != null)
         {
+            Debug.Log(target.name);
             AnimationTrigger();
             attackTimer = 0f;
         }
@@ -71,6 +75,10 @@ public class TowerBase : MonoBehaviour
         {
             module.Execute(target);
         }
+    }
+    public void ToggleAttacking()
+    {
+        isAttacking = !isAttacking;
     }
     public void ShowRange(bool show)
     {

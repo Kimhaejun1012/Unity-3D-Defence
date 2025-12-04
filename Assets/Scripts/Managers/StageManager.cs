@@ -9,6 +9,5 @@ public static class StageManager
     public static void SelectStage(int stage)
     {
         selectedStage = stage;
-        Debug.Log("스테이지: " + stage);
     }
 }

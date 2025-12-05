@@ -11,15 +11,15 @@ public class MonsterHealth : MonoBehaviour, IDamageable
     public event Action<float> OnHealthChanged;
 
     public bool isDie = false;
-    private int maxHP;
-    private int currentHP;
+    protected int maxHP;
+    protected int currentHP;
     public void Init(int hp)
     {
         maxHP = hp;
         currentHP = hp;
         isDie = false;
     }
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHP -= damage;
         OnHealthChanged?.Invoke((float)currentHP / maxHP);
@@ -30,7 +30,7 @@ public class MonsterHealth : MonoBehaviour, IDamageable
         }
     }
 
-    private void Die()
+    public virtual void Die()
     {
         isDie = true;
         OnDie?.Invoke();

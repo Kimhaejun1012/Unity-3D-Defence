@@ -13,7 +13,9 @@ public class Monster : MonoBehaviour
     private MonsterUI monsterUI;
 
     public MonsterHealth MonsterHealth => health;
+
     private Collider col;
+
     void Awake()
     {
         movement = GetComponent<MonsterMovement>();
@@ -34,7 +36,8 @@ public class Monster : MonoBehaviour
     {
         health.Init(data.maxHP);
         movement.Init(data.moveSpeed, transforms);
-        monsterUI.Init();
+        if(monsterUI != null)
+            monsterUI.Init();
         col.enabled = true;
     }
     private void MonsterDie()

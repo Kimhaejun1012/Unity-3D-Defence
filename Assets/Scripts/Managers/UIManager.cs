@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI hpText;
     public Image waveDelayFillImage;
+    public Image bossHpFillImage;
+    public GameObject bossHPBar;
 
     void Awake()
     {
@@ -134,6 +136,10 @@ public class UIManager : MonoBehaviour
         lobbyButtons.SetActive(false);
         optionPanel.SetActive(true);
     }
+    public void ShowBossHPBar()
+    {
+        bossHPBar.SetActive(true);
+    }
     public void ShowStageSelect()
     {
         lobbyButtons.SetActive(false);
@@ -149,6 +155,10 @@ public class UIManager : MonoBehaviour
         lobbyButtons.SetActive(true);
         optionPanel.SetActive(false);
         SaveManager.Save();
+    }
+    public void HideBossHPBar()
+    {
+        bossHPBar.SetActive(false);
     }
     public void HidePausePanel()
     {
@@ -188,6 +198,10 @@ public class UIManager : MonoBehaviour
     public void UpdateHPUI()
     {
         hpText.text = $"{Localization.Get("Life")}: {PlayerStatsManager.Instance.currentHP}";
+    }
+    public void UpdateBossHPUI(float normalized)
+    {
+        bossHpFillImage.fillAmount = normalized;
     }
     public void UpdateWaveDelayUI(float progress)
     {

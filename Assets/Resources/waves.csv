@@ -1,7 +1,7 @@
 ﻿Wave,MonsterType,Count,Interval
-1,TestMonster,10,1
-1,Zombie,10,1
-2,TestMonster,10,1
-2,Zombie,10,1
-3,Horse,10,1
-3,Horse,10,1
+1,TestMonster,1,1
+1,Zombie,1,1
+2,TestMonster,1,1
+2,Zombie,1,1
+3,Horse,1,5
+4,BossMonster1,1,1

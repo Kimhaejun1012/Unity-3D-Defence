@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
@@ -44,6 +43,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI levelUpText;
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI hpText;
+    public Image waveDelayFillImage;
 
     void Awake()
     {
@@ -188,6 +188,10 @@ public class UIManager : MonoBehaviour
     public void UpdateHPUI()
     {
         hpText.text = $"{Localization.Get("Life")}: {PlayerStatsManager.Instance.currentHP}";
+    }
+    public void UpdateWaveDelayUI(float progress)
+    {
+        waveDelayFillImage.fillAmount = progress;
     }
     public void SetGameSpeed(float speed)
     {

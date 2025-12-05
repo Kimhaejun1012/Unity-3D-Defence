@@ -68,9 +68,26 @@ public class WaveManager : MonoBehaviour
 
         isWaveRunning = false;
 
-        yield return new WaitForSeconds(timeBetweenWaves);
+        yield return StartCoroutine(WaitNextWaveRoutine());
         StartNextWave();
     }
+    private IEnumerator WaitNextWaveRoutine()
+    {
+        float timer = 0f;
+
+        while (timer < timeBetweenWaves)
+        {
+            timer += Time.deltaTime;
+            float progress = 1f - timer / timeBetweenWaves;
+
+            UIManager.Instance.UpdateWaveDelayUI(progress);
+
+            yield return null;
+        }
+
+        UIManager.Instance.UpdateWaveDelayUI(1f);
+    }
+
     private IEnumerator WaitForAllMonstersAndClear()
     {
         while (spawner.activeMonsterCount > 0)
@@ -85,5 +102,4 @@ public class WaveManager : MonoBehaviour
             Mathf.Max(SaveManager.data.unlockedStage, nextStage);
         SaveManager.Save();
     }
-
 }

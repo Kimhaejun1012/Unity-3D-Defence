@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Mutant2
   maxHP: 6
-  moveSpeed: 6
+  moveSpeed: 5
   reward: 6

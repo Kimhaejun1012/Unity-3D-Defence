@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SlowAreaAttackModule : MonoBehaviour, IAttackModule
 {
-    private float[] duration = { 3f, 4f, 5f };
-    private float[] slowPercent = { 0.3f, 0.4f, 0.5f };
+    private float[] duration = { 3f, 3f, 4f };
+    private float[] slowPercent = { 0.2f, 0.3f, 0.4f };
     public string attackEffectKey;
     private TowerBase tower;
 

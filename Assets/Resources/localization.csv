@@ -12,18 +12,18 @@ StunTower_DESC,기절 공격을 합니다.,Stun Attack Excute.
 Damage,공격력,Damage
 Range,범위,AttackRange
 AttackSpeed,공격속도,AttackSpeed
-SlowTower_1,이동속도 감소 30% 지속시간 3초,Slow 30% Duration 3s
-SlowTower_2,이동속도 감소 40% 지속시간 4초,Slow 40% Duration 4s
-SlowTower_3,이동속도 감소 50% 지속시간 5초,Slow 50% Duration 5s
+SlowTower_1,이동속도 감소 20% 지속시간 3초,Slow 20% Duration 3s
+SlowTower_2,이동속도 감소 30% 지속시간 3초,Slow 30% Duration 3s
+SlowTower_3,이동속도 감소 40% 지속시간 4초,Slow 40% Duration 4s
 LightningTower_1,체인 수 3,Chain Count 3
 LightningTower_2,체인 수 4,Chain Count 4
 LightningTower_3,체인 수 5,Chain Count 5
-StunTower_1,기절 지속시간 0.3,StunTime 0.3
-StunTower_2,기절 지속시간 0.4,StunTime 0.4
-StunTower_3,기절 지속시간 0.5,StunTime 0.5
-SplashTower_1,스플래쉬 범위 3,Splash Range 3
-SplashTower_2,스플래쉬 범위 4,Splash Range 4
-SplashTower_3,스플래쉬 범위 5,Splash Range 5
+StunTower_1,기절 지속시간 0.1,StunTime 0.1
+StunTower_2,기절 지속시간 0.2,StunTime 0.2
+StunTower_3,기절 지속시간 0.3,StunTime 0.3
+SplashTower_1,스플래쉬 범위 1,Splash Range 1
+SplashTower_2,스플래쉬 범위 1,Splash Range 1
+SplashTower_3,스플래쉬 범위 2,Splash Range 2
 LevelUp,레벨업,LevelUp
 MaxLevel,최대레벨,MaxLevel
 Start,시작,START

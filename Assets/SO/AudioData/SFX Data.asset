@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d2e64e25cd972418b973a68f173746, type: 3}
+  m_Name: SFX Data
+  m_EditorClassIdentifier: 
+  standardHit: {fileID: 8300000, guid: 598388730c0805543a8c8c42b368f33f, type: 3}
+  splashHit: {fileID: 8300000, guid: e7a3775631b505b46830c58585f8bf3f, type: 3}
+  lightningHit: {fileID: 8300000, guid: bd19611c7b796a64590dad0213ec04f4, type: 3}
+  bladeHit: {fileID: 8300000, guid: 3bc6c23b1557eb945b4564bf624bc917, type: 3}
+  slowSFX: {fileID: 8300000, guid: 5625a15c5d86f3d4f957059b5bdde670, type: 3}
+  stunSFX: {fileID: 8300000, guid: f3bbd14871cb4cd4b80ed85e7cd9a87a, type: 3}
+  bossDie: {fileID: 8300000, guid: f025adfe03570eb4bb1e0a221715e4e4, type: 3}

@@ -6,7 +6,7 @@ using System.Linq;
 public class WaveManager : MonoBehaviour
 {
     public MonsterSpawner spawner;
-    public string csvName = "waves";
+    public string csvName = "wave";
 
     private List<IGrouping<int, WaveRow>> groupedWaves;
     public int currentWaveIndex = -1;
@@ -16,12 +16,12 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         LoadWaves();
-        StartNextWave();
+        StartCoroutine(WaitFirstWaveAndStart());
     }
 
     void LoadWaves()
     {
-        List<WaveRow> rows = WaveCSVLoader.Load(csvName);
+        List<WaveRow> rows = WaveCSVLoader.Load($"{csvName}{StageManager.selectedStage + 1}");
 
         groupedWaves = rows
             .GroupBy(r => r.wave)
@@ -48,11 +48,32 @@ public class WaveManager : MonoBehaviour
 
         StartCoroutine(RunWaveRoutine());
     }
+    private IEnumerator WaitFirstWaveAndStart()
+    {
+        float timer = 0f;
 
+        UIManager.Instance.UpdateWaveUI(
+            currentWaveIndex + 1,
+            groupedWaves.Count
+        );
+
+        while (timer < timeBetweenWaves)
+        {
+            timer += Time.deltaTime;
+            float progress = 1f - timer / timeBetweenWaves;
+
+            UIManager.Instance.UpdateWaveDelayUI(progress);
+
+            yield return null;
+        }
+
+        UIManager.Instance.UpdateWaveDelayUI(1f);
+
+        StartNextWave();
+    }
     private IEnumerator RunWaveRoutine()
     {
         isWaveRunning = true;
-
 
         var waveRows = groupedWaves[currentWaveIndex];
 
@@ -84,7 +105,6 @@ public class WaveManager : MonoBehaviour
 
             yield return null;
         }
-
         UIManager.Instance.UpdateWaveDelayUI(1f);
     }
 
@@ -99,7 +119,11 @@ public class WaveManager : MonoBehaviour
 
         int nextStage = StageManager.selectedStage + 1;
         SaveManager.data.unlockedStage =
-            Mathf.Max(SaveManager.data.unlockedStage, nextStage);
+                Mathf.Clamp(
+                    Mathf.Max(SaveManager.data.unlockedStage, nextStage),
+                    0,
+                    3
+                );
         SaveManager.Save();
     }
 }

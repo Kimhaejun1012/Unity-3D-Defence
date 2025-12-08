@@ -35,7 +35,7 @@ public class GridManagerEditor : Editor
 
         string path = EditorUtility.SaveFilePanelInProject(
             "MapData 저장",
-            "NewMapData",
+            "MapData",
             "asset",
             "저장할 위치를 선택하세요."
         );

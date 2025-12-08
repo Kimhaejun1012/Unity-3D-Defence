@@ -7,4 +7,5 @@ public class BGMData : ScriptableObject
 {
     public AudioClip lobby;
     public AudioClip game;
+    public AudioClip boss;
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobby: {fileID: 8300000, guid: 55a8e24bc6d580a4c98d12dfd0f19cfe, type: 3}
   game: {fileID: 8300000, guid: 723b420ac487be049a398e2b17b1a95c, type: 3}
+  boss: {fileID: 8300000, guid: 58b5fe9195352cd4dba0cad6f11452b7, type: 3}

@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
 
     [Header("StageSelect Panel")]
     public GameObject stageSelectPanel;
+    public Button[] stageButtons;
 
     public TextMeshProUGUI levelUpText;
     public TextMeshProUGUI goldText;
@@ -53,6 +54,19 @@ public class UIManager : MonoBehaviour
         else Destroy(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void Start()
+    {
+        if(stageButtons.Length > 0)
+        {
+            foreach (var button in stageButtons)
+                button.interactable = false;
+
+            for (int i = 0; i <= SaveManager.data.unlockedStage; i++)
+            {
+                stageButtons[i].interactable = true;
+            }
+        }
     }
     public void GameSceneInit()
     {
@@ -120,6 +134,10 @@ public class UIManager : MonoBehaviour
     public void ShowPausePanel()
     {
         pausePanel.SetActive(true);
+        foreach (var offUI in gameEndDisableUI)
+        {
+            offUI.SetActive(false);
+        }
     }
     public void ShowClearPanel()
     {
@@ -163,6 +181,10 @@ public class UIManager : MonoBehaviour
     public void HidePausePanel()
     {
         pausePanel.SetActive(false);
+        foreach (var offUI in gameEndDisableUI)
+        {
+            offUI.SetActive(true);
+        }
     }
     public void HideStageSelect()
     {

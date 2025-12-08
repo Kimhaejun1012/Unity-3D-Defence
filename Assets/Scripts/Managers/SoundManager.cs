@@ -56,6 +56,11 @@ public class SoundManager : MonoBehaviour
         bgmSource.Play();
     }
 
+    public void OnBossAppeared()
+    {
+        PlayBGM(bgmDB.boss);
+    }
+
     public void StopBGM()
     {
         bgmSource.Stop();

@@ -66,17 +66,21 @@ public class MonsterMovement : MonoBehaviour
     }
     public void ApplySlow(float percent, float duration)
     {
-        if (percent < currentSlowPercent) return;
+        if (GetComponent<BossHealth>() == null)
+        {
+            if (percent < currentSlowPercent) return;
 
-        monsterUI.ShowStatus("Slow");
-        currentSlowPercent = percent;
-        slowTimer = duration;
+            monsterUI.ShowStatus("Slow");
+            currentSlowPercent = percent;
+            slowTimer = duration;
 
-        Speed = baseSpeed * (1f - percent);
+            Speed = baseSpeed * (1f - percent);
+        }
     }
     public void ApplyStun(float duration)
     {
-        StartCoroutine(StunRoutine(duration));
+        if (GetComponent<BossHealth>() == null)
+            StartCoroutine(StunRoutine(duration));
     }
 
     private IEnumerator StunRoutine(float t)

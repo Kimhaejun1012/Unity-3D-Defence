@@ -18,3 +18,4 @@ MonoBehaviour:
   bladeHit: {fileID: 8300000, guid: 3bc6c23b1557eb945b4564bf624bc917, type: 3}
   slowSFX: {fileID: 8300000, guid: 5625a15c5d86f3d4f957059b5bdde670, type: 3}
   stunSFX: {fileID: 8300000, guid: f3bbd14871cb4cd4b80ed85e7cd9a87a, type: 3}
+  bossDie: {fileID: 8300000, guid: f025adfe03570eb4bb1e0a221715e4e4, type: 3}

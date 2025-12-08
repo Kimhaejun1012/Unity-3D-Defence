@@ -6,6 +6,7 @@ public class BossHealth : MonsterHealth
 {
     private void Start()
     {
+        SoundManager.Instance.OnBossAppeared();
         UIManager.Instance.bossHPBar.SetActive(true);
     }
     public override void TakeDamage(int damage)
@@ -22,5 +23,6 @@ public class BossHealth : MonsterHealth
     {
         base.Die();
         UIManager.Instance.bossHPBar.SetActive(false);
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.sfxDB.bossDie);
     }
 }

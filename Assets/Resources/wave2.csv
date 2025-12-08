@@ -1,0 +1,9 @@
+﻿Wave,MonsterType,Count,Interval
+1,Zombie,6,1
+2,Horse,6,1
+3,Mutant2,6,1
+4,SeaPrincess,6,1
+5,Horse,4,1
+5,Zombie,4,1
+5,SeaPrincess,4,1
+6,BossMonster2,1,1

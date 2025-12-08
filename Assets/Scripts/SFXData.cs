@@ -11,4 +11,5 @@ public class SFXData : ScriptableObject
     public AudioClip bladeHit;
     public AudioClip slowSFX;
     public AudioClip stunSFX;
+    public AudioClip bossDie;
 }

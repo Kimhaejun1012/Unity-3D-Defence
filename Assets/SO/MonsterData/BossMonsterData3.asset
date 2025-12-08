@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9299a485653794483ff05ea70c9c6f, type: 3}
   m_Name: BossMonsterData3
   m_EditorClassIdentifier: 
-  monsterName: TestMonster
+  monsterName: BossMonster3
   maxHP: 10
   moveSpeed: 7
   reward: 10

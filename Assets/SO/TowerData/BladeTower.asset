@@ -18,7 +18,7 @@ MonoBehaviour:
   range:
   - 1
   - 1
-  - 1
+  - 2
   attackSpeed:
   - 1
   - 2

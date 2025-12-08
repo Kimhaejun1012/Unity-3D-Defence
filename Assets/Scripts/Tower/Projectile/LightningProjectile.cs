@@ -6,7 +6,7 @@ public class LightningProjectile : ProjectileBase
 {
     public string key;
     private int[] chainCount = { 3, 4, 5 };
-    private float[] chainRange = { 4f, 5f, 6f };
+    private float[] chainRange = { 2f, 2f, 3f };
 
     private List<Monster> hitTargets = new List<Monster>();
 

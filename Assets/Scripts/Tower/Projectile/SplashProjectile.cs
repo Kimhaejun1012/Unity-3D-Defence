@@ -7,7 +7,7 @@ public class SplashProjectile : ProjectileBase
 {
     public string key;
 
-    private float[] splashRadius = {3f,4f,5f };
+    private float[] splashRadius = {1f,1f,2f };
     public LayerMask monsterMask;
 
     protected override void OnHit(Monster target)

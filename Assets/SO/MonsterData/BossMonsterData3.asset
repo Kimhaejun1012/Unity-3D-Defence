@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BossMonsterData3
   m_EditorClassIdentifier: 
   monsterName: BossMonster3
-  maxHP: 10
-  moveSpeed: 7
-  reward: 10
+  maxHP: 120
+  moveSpeed: 5
+  reward: 0

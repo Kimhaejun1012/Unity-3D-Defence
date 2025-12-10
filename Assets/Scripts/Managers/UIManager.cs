@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject towerInfoPanel;
     public TextMeshProUGUI towerNameText;
     public TextMeshProUGUI towerDescriptionText;
+    public TextMeshProUGUI towerPriceText;
 
     [Header("Tower Stats Panel")]
     public GameObject towerStatsPanel;
@@ -57,7 +58,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        if(stageButtons.Length > 0)
+        if (stageButtons.Length > 0)
         {
             foreach (var button in stageButtons)
                 button.interactable = false;
@@ -113,18 +114,20 @@ public class UIManager : MonoBehaviour
         defeatPanel.SetActive(true);
         defeatWaveText.text = waveText.text;
         GameManager.Instance.PauseGame();
-        foreach(var offUI in gameEndDisableUI)
+        foreach (var offUI in gameEndDisableUI)
         {
             offUI.SetActive(false);
         }
+        bossHPBar.SetActive(false);
 
     }
-    public void ShowTowerInfo(string towerKey)
+    public void ShowTowerInfo(string towerKey, int price)
     {
         towerInfoPanel.SetActive(true);
 
         towerNameText.text = Localization.Get($"{towerKey}_NAME");
         towerDescriptionText.text = Localization.Get($"{towerKey}_DESC");
+        towerPriceText.text = $"{Localization.Get("Price")}: {price}";
     }
     public void ShowTowerStatsInfo(string towerKey, TowerData data, int level)
     {
@@ -144,10 +147,11 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.PauseGame();
         claerPanel.SetActive(true);
 
-        foreach(var offUI in gameEndDisableUI)
+        foreach (var offUI in gameEndDisableUI)
         {
             offUI.SetActive(false);
         }
+        bossHPBar.SetActive(false);
     }
     public void ShowOptionPanel()
     {

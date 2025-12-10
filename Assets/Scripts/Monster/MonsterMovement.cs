@@ -60,6 +60,10 @@ public class MonsterMovement : MonoBehaviour
 
         if (index >= waypoints.Length)
         {
+            if(GetComponent<BossHealth>() != null)
+            {
+                PlayerStatsManager.Instance.PlayerDie();
+            }
             PlayerStatsManager.Instance.TakeDamage(1);
             GetComponent<PooledObject>().Return();
         }

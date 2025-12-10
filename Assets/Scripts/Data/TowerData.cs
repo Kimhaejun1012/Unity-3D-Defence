@@ -11,4 +11,5 @@ public class TowerData : ScriptableObject
     public float[] range;
     public float[] attackSpeed;
     public int[] baseDamage;
+    public int price;
 }

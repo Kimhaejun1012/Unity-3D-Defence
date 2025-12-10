@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SeaPrincess
   m_EditorClassIdentifier: 
   monsterName: SeaPrincess
-  maxHP: 10
+  maxHP: 20
   moveSpeed: 5
   reward: 10

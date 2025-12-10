@@ -39,12 +39,16 @@ public class PlayerStatsManager : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            UIManager.Instance.ShowGameOver();
-            GameManager.Instance.GameOver();
+            PlayerDie();
         }
     }
     public bool CheckGold(int amount)
     {
         return gold >= amount;
+    }
+    public void PlayerDie()
+    {
+        UIManager.Instance.ShowGameOver();
+        GameManager.Instance.GameOver();
     }
 }
